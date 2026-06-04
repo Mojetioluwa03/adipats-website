@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="ADIPATS Consulting — Bespoke enterprise software development for banks, universities, pension administrators, and government agencies in Nigeria and Africa."/>
+<meta name="keywords" content="enterprise software, Nigeria, banking software, pension software, university software, fintech, ADIPATS"/>
+<meta property="og:title" content="ADIPATS Consulting — Enterprise Software Development"/>
+<meta property="og:description" content="Mission-critical enterprise systems engineered for Africa's most trusted institutions."/>
+<title>ADIPATS Consulting — Enterprise Software Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<style>
+:root {
+  --navy: #020b18;
+  --navy-2: #041020;
+  --navy-3: #071628;
+  --slate: #0d2137;
+  --blue-deep: #0a3660;
+  --blue-mid: #1057a0;
+  --blue-accent: #1a7fe8;
+  --blue-bright: #3b9eff;
+  --cyan: #22d3ee;
+  --gold: #f0c040;
+  --gold-dim: #c49a20;
+  --white: #f8fafc;
+  --white-90: rgba(248,250,252,0.9);
+  --white-60: rgba(248,250,252,0.6);
+  --white-30: rgba(248,250,252,0.3);
+  --white-10: rgba(248,250,252,0.1);
+  --white-05: rgba(248,250,252,0.05);
+  --border: rgba(255,255,255,0.08);
+  --border-bright: rgba(26,127,232,0.3);
+  --glass: rgba(7,22,40,0.7);
+  --glass-2: rgba(4,16,32,0.85);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--navy);
+  color:var(--white);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--blue-accent);color:#fff}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── SCROLL PROGRESS ── */
+#scroll-progress{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(90deg,var(--blue-accent),var(--cyan));
+  z-index:9999;transition:width 0.1s linear;
+}
+
+/* ── NAVIGATION ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0 2rem;
+  transition:all 0.4s ease;
+}
+nav.scrolled{
+  background:var(--glass-2);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+}
+.nav-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:800;font-size:1.25rem;
+  letter-spacing:-0.02em;
+}
+.logo-mark{
+  width:36px;height:36px;
+  background:linear-gradient(135deg,var(--blue-accent),var(--cyan));
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.85rem;font-weight:800;color:#fff;
+  font-family:var(--font-display);
+}
+.nav-links{
+  display:flex;align-items:center;gap:2rem;
+  list-style:none;
+}
+.nav-links a{
+  font-size:0.875rem;font-weight:500;color:var(--white-60);
+  letter-spacing:0.01em;
+  transition:color 0.2s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;
+  background:var(--blue-accent);transition:width 0.3s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{
+  padding:0.5rem 1.25rem;
+  background:var(--blue-accent);
+  color:#fff;border-radius:6px;
+  font-size:0.875rem;font-weight:600;
+  transition:all 0.2s;
+}
+.nav-cta:hover{background:var(--blue-bright);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.nav-hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+.mobile-menu{
+  display:none;position:fixed;top:72px;left:0;right:0;
+  background:var(--glass-2);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:1.5rem;z-index:999;
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:0.75rem 0;color:var(--white-60);font-weight:500;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* ── SECTION BASICS ── */
+section{position:relative;overflow:hidden}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 2rem}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:0.75rem;font-weight:500;
+  color:var(--blue-accent);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.section-label::before{content:'';width:24px;height:1px;background:var(--blue-accent)}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(2rem,4vw,3.25rem);
+  font-weight:800;line-height:1.1;letter-spacing:-0.03em;
+  color:var(--white);margin-bottom:1.25rem;
+}
+.section-subtitle{
+  font-size:1.0625rem;color:var(--white-60);line-height:1.7;
+  max-width:600px;
+}
+.reveal{opacity:0;transform:translateY(40px)}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-body);font-weight:600;font-size:0.9375rem;
+  padding:0.875rem 2rem;border-radius:8px;
+  transition:all 0.25s ease;letter-spacing:0.01em;
+  position:relative;overflow:hidden;
+}
+.btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent);
+  opacity:0;transition:opacity 0.2s;
+}
+.btn:hover::after{opacity:1}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue-accent),#0f6cd4);
+  color:#fff;
+  box-shadow:0 8px 32px rgba(26,127,232,0.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(26,127,232,0.5)}
+.btn-secondary{
+  background:var(--white-05);
+  border:1px solid var(--border);
+  color:var(--white-90);
+  backdrop-filter:blur(10px);
+}
+.btn-secondary:hover{border-color:var(--border-bright);background:var(--white-10);transform:translateY(-2px)}
+.btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+
+/* ── CARDS ── */
+.glass-card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  transition:all 0.35s ease;
+}
+.glass-card:hover{
+  border-color:var(--border-bright);
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(26,127,232,0.15);
+}
+
+/* ══════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:72px;
+  background:var(--navy-2);
+  position:relative;
+}
+.hero-canvas{
+  position:absolute;inset:0;z-index:0;
+  overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(26,127,232,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,127,232,0.06) 1px, transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+}
+.hero-glow-1{
+  position:absolute;top:-20%;left:-10%;
+  width:60vw;height:60vw;
+  background:radial-gradient(circle, rgba(10,54,96,0.7) 0%, transparent 70%);
+  filter:blur(60px);
+  animation:floatGlow 8s ease-in-out infinite;
+}
+.hero-glow-2{
+  position:absolute;bottom:-20%;right:-10%;
+  width:50vw;height:50vw;
+  background:radial-gradient(circle, rgba(26,127,232,0.2) 0%, transparent 70%);
+  filter:blur(80px);
+  animation:floatGlow 10s ease-in-out infinite reverse;
+}
+.hero-glow-3{
+  position:absolute;top:30%;right:15%;
+  width:30vw;height:30vw;
+  background:radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%);
+  filter:blur(60px);
+  animation:floatGlow 12s ease-in-out infinite 2s;
+}
+@keyframes floatGlow{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(2%,3%) scale(1.05)}
+}
+.hero-particles{position:absolute;inset:0}
+.particle{
+  position:absolute;border-radius:50%;
+  background:var(--blue-accent);
+  animation:particleFloat linear infinite;
+  opacity:0;
+}
+@keyframes particleFloat{
+  0%{transform:translateY(100vh) scale(0);opacity:0}
+  10%{opacity:0.6}
+  90%{opacity:0.3}
+  100%{transform:translateY(-100px) scale(1);opacity:0}
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:6rem 2rem 4rem;
+  max-width:1280px;margin:0 auto;width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;
+  background:rgba(26,127,232,0.12);
+  border:1px solid rgba(26,127,232,0.3);
+  border-radius:100px;
+  font-size:0.8125rem;font-weight:500;color:var(--blue-bright);
+  margin-bottom:2rem;
+  font-family:var(--font-mono);letter-spacing:0.05em;
+}
+.hero-badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-headline{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,6vw,5rem);
+  font-weight:800;line-height:1.0;
+  letter-spacing:-0.04em;
+  color:var(--white);
+  max-width:900px;
+  margin-bottom:1.5rem;
+}
+.hero-headline .accent{
+  background:linear-gradient(135deg,var(--blue-bright),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-headline .gold{
+  background:linear-gradient(135deg,var(--gold),#e8a020);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:1.125rem;color:var(--white-60);line-height:1.75;
+  max-width:620px;margin-bottom:2.5rem;font-weight:400;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  max-width:900px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.stat-item{
+  background:var(--navy-3);
+  padding:1.5rem 1.75rem;
+  position:relative;
+}
+.stat-item::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue-accent),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.stat-item:hover::before{opacity:1}
+.stat-num{
+  font-family:var(--font-display);font-size:2rem;font-weight:800;
+  color:var(--white);letter-spacing:-0.03em;line-height:1;
+  margin-bottom:0.375rem;
+}
+.stat-num span{color:var(--blue-accent)}
+.stat-label{font-size:0.8125rem;color:var(--white-60);font-weight:500}
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  z-index:2;cursor:pointer;
+}
+.hero-scroll span{font-size:0.75rem;color:var(--white-30);letter-spacing:0.1em;font-family:var(--font-mono);text-transform:uppercase}
+.scroll-indicator{
+  width:24px;height:40px;border:1px solid rgba(255,255,255,0.2);
+  border-radius:100px;display:flex;justify-content:center;padding-top:6px;
+}
+.scroll-dot{
+  width:4px;height:8px;background:var(--white-60);
+  border-radius:100px;
+  animation:scrollBounce 1.8s ease-in-out infinite;
+}
+@keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0.3}}
+
+/* ══════════════════════════════════════
+   ABOUT SECTION
+══════════════════════════════════════ */
+#about{padding:8rem 0;background:var(--navy)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative}
+.about-visual-inner{
+  background:linear-gradient(135deg,var(--slate),var(--navy-3));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2.5rem;position:relative;overflow:hidden;
+}
+.about-visual-inner::before{
+  content:'';position:absolute;top:-50%;right:-30%;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(26,127,232,0.15),transparent 70%);
+  border-radius:50%;
+}
+.about-badge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-badge{
+  background:var(--navy-2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.25rem;
+  transition:all 0.3s;
+}
+.about-badge:hover{border-color:var(--border-bright);transform:translateY(-2px)}
+.about-badge-icon{
+  width:40px;height:40px;
+  background:linear-gradient(135deg,rgba(26,127,232,0.2),rgba(34,211,238,0.1));
+  border:1px solid rgba(26,127,232,0.2);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.125rem;margin-bottom:0.75rem;
+}
+.about-badge-title{font-family:var(--font-display);font-size:0.875rem;font-weight:700;margin-bottom:0.25rem}
+.about-badge-sub{font-size:0.8125rem;color:var(--white-60)}
+.about-float{
+  position:absolute;bottom:-1.5rem;right:-1.5rem;
+  background:var(--glass);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1rem 1.25rem;
+  backdrop-filter:blur(20px);
+  display:flex;align-items:center;gap:10px;
+  white-space:nowrap;
+}
+.about-float-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:blink 2s infinite}
+.about-float-text{font-size:0.8125rem;font-weight:500}
+.about-text p{font-size:1rem;color:var(--white-60);line-height:1.8;margin-bottom:1.25rem}
+.about-pillars{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem}
+.pillar{
+  padding:6px 14px;background:var(--white-05);
+  border:1px solid var(--border);border-radius:100px;
+  font-size:0.8125rem;font-weight:500;color:var(--white-60);
+  transition:all 0.2s;
+}
+.pillar:hover{border-color:var(--border-bright);color:var(--white);background:rgba(26,127,232,0.1)}
+
+/* ══════════════════════════════════════
+   SERVICES SECTION
+══════════════════════════════════════ */
+#services{padding:8rem 0;background:var(--navy-2)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-top:4rem;
+}
+.service-card{
+  padding:2rem;
+  background:var(--navy-3);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  transition:all 0.35s ease;
+  position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(26,127,232,0.06),transparent);
+  opacity:0;transition:opacity 0.35s;
+}
+.service-card:hover{border-color:var(--border-bright);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.5)}
+.service-card:hover::before{opacity:1}
+.service-icon{
+  width:52px;height:52px;
+  background:linear-gradient(135deg,rgba(26,127,232,0.2),rgba(34,211,238,0.1));
+  border:1px solid rgba(26,127,232,0.25);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.375rem;margin-bottom:1.25rem;
+}
+.service-title{font-family:var(--font-display);font-size:1.125rem;font-weight:700;margin-bottom:0.625rem}
+.service-desc{font-size:0.9rem;color:var(--white-60);line-height:1.7}
+.service-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem}
+.service-tag{
+  font-size:0.75rem;padding:3px 10px;
+  background:rgba(26,127,232,0.1);border:1px solid rgba(26,127,232,0.2);
+  border-radius:100px;color:var(--blue-bright);font-family:var(--font-mono);
+}
+
+/* ══════════════════════════════════════
+   SOLUTIONS SECTION
+══════════════════════════════════════ */
+#solutions{padding:8rem 0;background:var(--navy)}
+.solutions-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+.solutions-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.sol-card{
+  background:var(--navy-3);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;cursor:pointer;
+  transition:all 0.35s ease;
+  position:relative;
+}
+.sol-card:hover{
+  border-color:rgba(26,127,232,0.5);
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(26,127,232,0.2);
+}
+.sol-card-header{
+  padding:1.75rem 1.75rem 1.25rem;
+  display:flex;align-items:flex-start;gap:1rem;
+  border-bottom:1px solid var(--border);
+}
+.sol-icon{
+  width:48px;height:48px;flex-shrink:0;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;
+}
+.sol-name{font-family:var(--font-display);font-size:1.0625rem;font-weight:800;margin-bottom:3px}
+.sol-category{font-size:0.78rem;color:var(--white-60);font-family:var(--font-mono);letter-spacing:0.05em;text-transform:uppercase}
+.sol-card-body{padding:1.25rem 1.75rem}
+.sol-desc{font-size:0.9rem;color:var(--white-60);line-height:1.7;margin-bottom:1.25rem}
+.sol-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.sol-features li{
+  font-size:0.8375rem;color:var(--white-60);
+  display:flex;align-items:flex-start;gap:8px;
+}
+.sol-features li::before{
+  content:'→';color:var(--blue-accent);flex-shrink:0;font-size:0.75rem;margin-top:2px;
+}
+.sol-card-footer{
+  padding:1rem 1.75rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sol-badge{
+  font-size:0.75rem;font-weight:600;padding:4px 10px;
+  border-radius:100px;font-family:var(--font-mono);
+}
+.sol-link{
+  font-size:0.8125rem;font-weight:600;color:var(--blue-accent);
+  display:flex;align-items:center;gap:4px;
+  transition:gap 0.2s;
+}
+.sol-card:hover .sol-link{gap:8px}
+
+/* ── SOLUTION MODAL ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(2,11,24,0.9);
+  backdrop-filter:blur(12px);
+  display:none;align-items:center;justify-content:center;padding:2rem;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--slate);
+  border:1px solid var(--border-bright);
+  border-radius:var(--radius-lg);
+  max-width:800px;width:100%;max-height:90vh;
+  overflow-y:auto;
+  animation:modalIn 0.3s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-header{
+  padding:2rem 2rem 1.5rem;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;background:var(--slate);z-index:1;
+}
+.modal-close{
+  width:36px;height:36px;
+  background:var(--white-05);border:1px solid var(--border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;color:var(--white-60);cursor:pointer;
+  transition:all 0.2s;flex-shrink:0;
+}
+.modal-close:hover{background:var(--white-10);color:var(--white)}
+.modal-body{padding:2rem}
+.modal-section-title{
+  font-family:var(--font-display);font-size:1rem;font-weight:700;
+  margin-bottom:1rem;color:var(--white);
+}
+.modal-features{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:2rem}
+.modal-feature-item{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:0.875rem;background:var(--white-05);border:1px solid var(--border);border-radius:8px;
+}
+.modal-feature-icon{color:var(--blue-accent);flex-shrink:0;font-size:0.875rem;margin-top:2px}
+.modal-feature-text{font-size:0.875rem;color:var(--white-60)}
+.modal-benefits{display:flex;flex-direction:column;gap:0.625rem}
+.modal-benefit{
+  display:flex;align-items:center;gap:10px;
+  font-size:0.9rem;color:var(--white-60);
+}
+.modal-benefit::before{content:'✓';color:#22c55e;font-weight:700;flex-shrink:0}
+
+/* ══════════════════════════════════════
+   INDUSTRIES SECTION
+══════════════════════════════════════ */
+#industries{padding:8rem 0;background:var(--navy-2)}
+.industries-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+  margin-top:4rem;
+}
+.industry-card{
+  background:var(--navy-3);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:2rem 1.5rem;
+  text-align:center;transition:all 0.35s;
+  cursor:default;
+}
+.industry-card:hover{
+  border-color:rgba(26,127,232,0.4);
+  background:linear-gradient(135deg,rgba(10,54,96,0.4),var(--navy-3));
+  transform:translateY(-4px);
+}
+.industry-emoji{font-size:2.25rem;margin-bottom:1rem;display:block}
+.industry-name{
+  font-family:var(--font-display);font-size:1rem;font-weight:700;
+  margin-bottom:0.5rem;
+}
+.industry-desc{font-size:0.8375rem;color:var(--white-60);line-height:1.6}
+
+/* ══════════════════════════════════════
+   TECHNOLOGY SECTION
+══════════════════════════════════════ */
+#technology{padding:8rem 0;background:var(--navy)}
+.tech-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start;margin-top:4rem}
+.tech-categories{display:flex;flex-direction:column;gap:0.75rem}
+.tech-cat{
+  padding:1rem 1.25rem;
+  background:var(--white-05);border:1px solid var(--border);
+  border-radius:var(--radius);cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all 0.2s;
+}
+.tech-cat.active,.tech-cat:hover{
+  background:rgba(26,127,232,0.1);border-color:rgba(26,127,232,0.3);
+}
+.tech-cat-name{font-weight:600;font-size:0.9375rem}
+.tech-cat-count{
+  font-size:0.75rem;font-family:var(--font-mono);
+  color:var(--blue-accent);
+}
+.tech-panel{display:none}
+.tech-panel.active{display:block}
+.tech-stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tech-item{
+  background:var(--navy-2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1rem;
+  display:flex;align-items:center;gap:0.75rem;
+  transition:all 0.2s;
+}
+.tech-item:hover{border-color:var(--border-bright)}
+.tech-item-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+}
+.tech-item-name{font-size:0.875rem;font-weight:500}
+.tech-item-tier{font-size:0.75rem;color:var(--white-60);font-family:var(--font-mono)}
+
+/* ══════════════════════════════════════
+   CASE STUDIES
+══════════════════════════════════════ */
+#case-studies{padding:8rem 0;background:var(--navy-2)}
+.case-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-top:4rem;
+}
+.case-card{
+  background:var(--navy-3);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  transition:all 0.35s;
+}
+.case-card:hover{border-color:var(--border-bright);transform:translateY(-4px)}
+.case-card-top{
+  padding:2rem 2rem 1.5rem;
+  border-bottom:1px solid var(--border);
+}
+.case-industry-tag{
+  display:inline-block;
+  font-size:0.75rem;font-family:var(--font-mono);font-weight:500;
+  padding:4px 10px;border-radius:100px;
+  margin-bottom:1rem;
+}
+.case-title{font-family:var(--font-display);font-size:1.0625rem;font-weight:800;margin-bottom:0.5rem}
+.case-client{font-size:0.85rem;color:var(--white-60)}
+.case-metrics{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);
+}
+.case-metric{
+  background:var(--navy-3);padding:1.25rem;
+  text-align:center;
+}
+.case-metric-num{
+  font-family:var(--font-display);font-size:1.5rem;font-weight:800;
+  color:var(--blue-bright);line-height:1;margin-bottom:0.25rem;
+}
+.case-metric-label{font-size:0.78rem;color:var(--white-60)}
+.case-card-foot{padding:1.25rem 2rem}
+.case-desc{font-size:0.875rem;color:var(--white-60);line-height:1.7}
+
+/* ══════════════════════════════════════
+   WHY CHOOSE US
+══════════════════════════════════════ */
+#why-us{padding:8rem 0;background:var(--navy)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.why-items{display:flex;flex-direction:column;gap:1.5rem}
+.why-item{
+  display:flex;gap:1.25rem;
+  padding:1.5rem;
+  background:var(--white-05);border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  transition:all 0.3s;
+}
+.why-item:hover{border-color:var(--border-bright);background:rgba(26,127,232,0.06)}
+.why-item-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(26,127,232,0.2),rgba(34,211,238,0.1));
+  border:1px solid rgba(26,127,232,0.2);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:1.125rem;
+}
+.why-item-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:0.375rem}
+.why-item-desc{font-size:0.875rem;color:var(--white-60);line-height:1.65}
+.why-visual{
+  background:linear-gradient(135deg,var(--slate),var(--navy-3));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2.5rem;position:relative;overflow:hidden;
+}
+.why-visual::before{
+  content:'';position:absolute;top:-30%;right:-20%;
+  width:250px;height:250px;
+  background:radial-gradient(circle,rgba(26,127,232,0.15),transparent 70%);
+}
+.why-metric-list{display:flex;flex-direction:column;gap:1rem}
+.why-metric{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;
+  background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius);
+}
+.why-metric-left{display:flex;align-items:center;gap:10px}
+.why-metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.why-metric-name{font-size:0.875rem;font-weight:500}
+.why-metric-val{
+  font-family:var(--font-display);font-size:1.125rem;font-weight:800;
+  color:var(--blue-bright);
+}
+.why-cert{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem;
+}
+.cert-badge{
+  padding:0.875rem 1rem;
+  background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius);
+  text-align:center;
+}
+.cert-badge-title{font-size:0.8125rem;font-weight:700;margin-bottom:2px}
+.cert-badge-sub{font-size:0.75rem;color:var(--white-60)}
+
+/* ══════════════════════════════════════
+   CLIENTS SECTION
+══════════════════════════════════════ */
+#clients{padding:8rem 0;background:var(--navy-2)}
+.clients-intro{text-align:center;max-width:640px;margin:0 auto 4rem}
+.clients-intro .section-subtitle{margin:0 auto}
+.clients-marquee-wrap{overflow:hidden;margin-bottom:3rem;position:relative}
+.clients-marquee-wrap::before,.clients-marquee-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;
+}
+.clients-marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--navy-2),transparent)}
+.clients-marquee-wrap::after{right:0;background:linear-gradient(-90deg,var(--navy-2),transparent)}
+.clients-marquee{display:flex;gap:1.5rem;animation:marquee 28s linear infinite}
+.clients-marquee-2{animation:marquee 20s linear infinite reverse}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.client-logo-card{
+  flex-shrink:0;
+  min-width:180px;height:72px;
+  background:var(--navy-3);border:1px solid var(--border);
+  border-radius:var(--radius);
+  display:flex;align-items:center;justify-content:center;
+  padding:0 1.5rem;
+  transition:all 0.3s;
+}
+.client-logo-card:hover{border-color:var(--border-bright)}
+.client-name{
+  font-family:var(--font-display);font-size:0.9rem;font-weight:700;
+  color:var(--white-60);white-space:nowrap;
+}
+.clients-sectors{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+  margin-top:3rem;
+}
+.sector-count{
+  text-align:center;padding:1.5rem;
+  background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-lg);
+}
+.sector-count-num{
+  font-family:var(--font-display);font-size:2rem;font-weight:800;
+  color:var(--blue-bright);margin-bottom:0.375rem;
+}
+.sector-count-label{font-size:0.875rem;color:var(--white-60)}
+
+/* ══════════════════════════════════════
+   SECURITY SECTION
+══════════════════════════════════════ */
+#security{padding:8rem 0;background:var(--navy)}
+.security-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.security-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.sec-pillar{
+  padding:1.75rem;
+  background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-lg);
+  transition:all 0.3s;
+}
+.sec-pillar:hover{border-color:var(--border-bright)}
+.sec-pillar-icon{font-size:1.5rem;margin-bottom:0.875rem}
+.sec-pillar-title{font-family:var(--font-display);font-weight:700;font-size:0.9375rem;margin-bottom:0.5rem}
+.sec-pillar-desc{font-size:0.8375rem;color:var(--white-60);line-height:1.6}
+.security-compliance{
+  background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2rem;
+}
+.compliance-title{font-family:var(--font-display);font-weight:700;margin-bottom:1.5rem}
+.compliance-list{display:flex;flex-direction:column;gap:0.875rem}
+.compliance-item{
+  display:flex;align-items:center;gap:10px;
+  padding:0.875rem 1rem;
+  background:var(--white-05);border:1px solid var(--border);border-radius:var(--radius);
+}
+.compliance-check{
+  width:24px;height:24px;background:rgba(34,197,94,0.15);
+  border:1px solid rgba(34,197,94,0.3);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.75rem;color:#22c55e;flex-shrink:0;
+}
+.compliance-text{font-size:0.875rem;font-weight:500}
+
+/* ══════════════════════════════════════
+   CONTACT SECTION
+══════════════════════════════════════ */
+#contact{padding:8rem 0 6rem;background:var(--navy-2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;margin-top:4rem}
+.contact-info{}
+.contact-locations{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2.5rem}
+.contact-location{
+  padding:1.5rem;background:var(--navy-3);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+}
+.contact-loc-header{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.contact-loc-icon{
+  width:32px;height:32px;background:rgba(26,127,232,0.15);
+  border:1px solid rgba(26,127,232,0.2);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:0.875rem;
+}
+.contact-loc-title{font-family:var(--font-display);font-weight:700;font-size:0.9375rem}
+.contact-loc-address{font-size:0.875rem;color:var(--white-60);line-height:1.6;margin-bottom:0.75rem}
+.contact-loc-details{display:flex;flex-direction:column;gap:4px}
+.contact-detail{font-size:0.8375rem;color:var(--white-60);display:flex;align-items:center;gap:6px}
+.contact-detail a:hover{color:var(--blue-bright)}
+.map-placeholder{
+  background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-lg);
+  height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;
+  overflow:hidden;position:relative;
+}
+.map-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(26,127,232,0.05) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(26,127,232,0.05) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+.map-pin{font-size:2rem;position:relative;z-index:1;animation:bounce 1.5s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.map-text{font-size:0.875rem;color:var(--white-60);position:relative;z-index:1}
+.contact-form{
+  background:var(--navy-3);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:2.5rem;
+}
+.form-title{font-family:var(--font-display);font-size:1.25rem;font-weight:800;margin-bottom:0.5rem}
+.form-sub{font-size:0.9rem;color:var(--white-60);margin-bottom:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:0.8125rem;font-weight:600;color:var(--white-90)}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:0.75rem 1rem;
+  background:var(--navy-2);border:1px solid var(--border);
+  border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:0.9rem;
+  transition:border-color 0.2s;outline:none;
+}
+.form-textarea{resize:vertical;min-height:120px}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue-accent)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--white-30)}
+.form-select option{background:var(--navy-3)}
+.form-submit{
+  width:100%;padding:0.875rem;margin-top:1.25rem;
+  background:linear-gradient(135deg,var(--blue-accent),#0f6cd4);
+  color:#fff;border-radius:8px;
+  font-weight:600;font-size:0.9375rem;font-family:var(--font-body);
+  cursor:pointer;border:none;
+  transition:all 0.25s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,127,232,0.4)}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{
+  background:var(--navy);
+  border-top:1px solid var(--border);
+  padding:4rem 2rem 2rem;
+}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:3rem;
+  margin-bottom:4rem;
+}
+.footer-brand-desc{font-size:0.9rem;color:var(--white-60);line-height:1.75;margin:1rem 0 1.5rem}
+.footer-socials{display:flex;gap:0.75rem}
+.footer-social{
+  width:36px;height:36px;background:var(--white-05);border:1px solid var(--border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:0.875rem;transition:all 0.2s;
+}
+.footer-social:hover{background:rgba(26,127,232,0.15);border-color:rgba(26,127,232,0.3)}
+.footer-col-title{font-family:var(--font-display);font-weight:700;font-size:0.9375rem;margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem}
+.footer-links a{font-size:0.875rem;color:var(--white-60);transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:2rem;border-top:1px solid var(--border);
+  font-size:0.8375rem;color:var(--white-60);
+}
+.footer-bottom-links{display:flex;gap:1.5rem}
+.footer-bottom-links a{color:var(--white-60);transition:color 0.2s}
+.footer-bottom-links a:hover{color:var(--white)}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:1024px){
+  .about-grid,.why-grid,.security-layout,.contact-grid,.tech-layout{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .solutions-grid{grid-template-columns:1fr 1fr}
+  .industries-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .solutions-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .about-float{display:none}
+  .case-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .nav-hamburger{display:flex}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .services-grid,.solutions-grid,.case-grid{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:1fr 1fr}
+  .security-pillars{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .modal-features{grid-template-columns:1fr}
+  .why-grid,.tech-layout{grid-template-columns:1fr}
+  .tech-stack-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .clients-sectors{grid-template-columns:repeat(2,1fr)}
+  .hero-actions{flex-direction:column}
+  .btn{justify-content:center}
+}
+@media(max-width:480px){
+  .hero-stats{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:1fr}
+  .clients-sectors{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- ══ NAVIGATION ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-mark">AP</div>
+      ADIPATS
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#services" data-nav="services">Services</a></li>
+      <li><a href="#solutions" data-nav="solutions">Solutions</a></li>
+      <li><a href="#industries" data-nav="industries">Industries</a></li>
+      <li><a href="#clients" data-nav="clients">Clients</a></li>
+      <li><a href="#security" data-nav="security">Security</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#solutions">Solutions</a>
+  <a href="#industries">Industries</a>
+  <a href="#clients">Clients</a>
+  <a href="#security">Security</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-canvas">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-glow-3"></div>
+    <div class="hero-particles" id="particles"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" id="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Enterprise Software Development · Nigeria & Africa
+    </div>
+    <h1 class="hero-headline" id="hero-headline">
+      Mission-Critical<br>Systems for<br><span class="accent">Africa's Most</span><br><span class="gold">Trusted Institutions</span>
+    </h1>
+    <p class="hero-sub" id="hero-sub">
+      ADIPATS Consulting engineers bespoke enterprise software for banks, universities, pension administrators, and government agencies — built for performance, security, and scale.
+    </p>
+    <div class="hero-actions" id="hero-actions">
+      <a href="#solutions" class="btn btn-primary">
+        Explore Solutions
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-secondary">Schedule Consultation</a>
+    </div>
+    <div class="hero-stats" id="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="20">0</span>+</div>
+        <div class="stat-label">Years in Enterprise</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="50">0</span>+</div>
+        <div class="stat-label">Enterprise Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="7">0</span></div>
+        <div class="stat-label">Core Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="99">0</span>.<span style="color:var(--blue-accent)">9</span>%</div>
+        <div class="stat-label">System Uptime SLA</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>Scroll</span>
+    <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="about-badge-grid">
+            <div class="about-badge">
+              <div class="about-badge-icon">🏦</div>
+              <div class="about-badge-title">Banking Systems</div>
+              <div class="about-badge-sub">Tier-1 Grade Architecture</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">🔐</div>
+              <div class="about-badge-title">Security First</div>
+              <div class="about-badge-sub">CBN & ISO Aligned</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">⚡</div>
+              <div class="about-badge-title">High Performance</div>
+              <div class="about-badge-sub">99.9% Uptime SLA</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">🌍</div>
+              <div class="about-badge-title">Pan-African Reach</div>
+              <div class="about-badge-sub">Deployed Across Africa</div>
+            </div>
+          </div>
+          <div class="about-float">
+            <div class="about-float-dot"></div>
+            <div class="about-float-text">Systems Operational Nationwide</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Engineering the Infrastructure of Tomorrow's Africa</h2>
+        <p>ADIPATS Consulting is a Nigerian enterprise software company with over two decades of proven excellence building mission-critical systems for the continent's most respected financial institutions, universities, and government bodies.</p>
+        <p>We don't build generic software. We architect bespoke, institution-grade platforms that handle billions in transactions, millions of students, and thousands of pension beneficiaries — reliably, securely, and at scale.</p>
+        <p>From cheque truncation systems for commercial banks to pension management platforms for retirement administrators, our solutions power the invisible infrastructure that keeps Africa's economy running.</p>
+        <div class="about-pillars">
+          <span class="pillar">Bespoke Development</span>
+          <span class="pillar">CBN Compliance</span>
+          <span class="pillar">Enterprise Architecture</span>
+          <span class="pillar">Agile Delivery</span>
+          <span class="pillar">24/7 Support</span>
+          <span class="pillar">Local Expertise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Enterprise Services</h2>
+      <p class="section-subtitle">End-to-end software engineering services tailored to the unique complexity of enterprise and institutional environments.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Bespoke Software Development</div>
+        <div class="service-desc">Custom enterprise applications engineered from the ground up to solve your institution's most complex operational challenges.</div>
+        <div class="service-tags"><span class="service-tag">Java</span><span class="service-tag">.NET</span><span class="service-tag">Oracle DB</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Systems Integration</div>
+        <div class="service-desc">Seamless integration of legacy systems, third-party APIs, and modern platforms into a unified, cohesive enterprise architecture.</div>
+        <div class="service-tags"><span class="service-tag">REST API</span><span class="service-tag">SOAP</span><span class="service-tag">ESB</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏦</div>
+        <div class="service-title">Banking & Fintech Solutions</div>
+        <div class="service-desc">CBN-compliant banking systems including clearing, settlement, cheque management, and core banking integrations.</div>
+        <div class="service-tags"><span class="service-tag">CBN</span><span class="service-tag">NIBSS</span><span class="service-tag">ISO 8583</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">☁️</div>
+        <div class="service-title">Cloud & Infrastructure</div>
+        <div class="service-desc">Enterprise cloud migration, hybrid infrastructure design, and high-availability architectures for mission-critical workloads.</div>
+        <div class="service-tags"><span class="service-tag">AWS</span><span class="service-tag">Azure</span><span class="service-tag">DevOps</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎓</div>
+        <div class="service-title">EdTech & University Systems</div>
+        <div class="service-desc">Comprehensive university management platforms covering student records, examinations, portals, and academic administration.</div>
+        <div class="service-tags"><span class="service-tag">ERP</span><span class="service-tag">Student MIS</span><span class="service-tag">Portal</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🛡️</div>
+        <div class="service-title">Compliance & Security Consulting</div>
+        <div class="service-desc">Regulatory compliance audits, security architecture reviews, and implementation of industry-standard frameworks for financial institutions.</div>
+        <div class="service-tags"><span class="service-tag">ISO 27001</span><span class="service-tag">PCI DSS</span><span class="service-tag">NDPR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTIONS ══ -->
+<section id="solutions">
+  <div class="section-inner">
+    <div class="solutions-header reveal">
+      <div>
+        <div class="section-label">Our Products</div>
+        <h2 class="section-title">Flagship Solutions</h2>
+        <p class="section-subtitle">Battle-tested enterprise products deployed across Africa's top institutions.</p>
+      </div>
+    </div>
+    <div class="solutions-grid" id="solutions-grid">
+
+      <!-- Results Manager -->
+      <div class="sol-card reveal" onclick="openModal('results-manager')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(167,139,250,0.1));border:1px solid rgba(99,102,241,0.25)">🎓</div>
+          <div>
+            <div class="sol-name">Results Manager</div>
+            <div class="sol-category">Academic · University</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A comprehensive academic results management system for universities and tertiary institutions — from data entry to transcript generation.</div>
+          <ul class="sol-features">
+            <li>Automated result computation & GPA</li>
+            <li>Multi-department senate approval workflow</li>
+            <li>Transcript & certificate generation</li>
+            <li>Student academic history management</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(99,102,241,0.15);color:#a78bfa;border:1px solid rgba(99,102,241,0.25)">Education</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Smart Receipts -->
+      <div class="sol-card reveal" onclick="openModal('smart-receipts')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(34,197,94,0.2),rgba(16,185,129,0.1));border:1px solid rgba(34,197,94,0.25)">🧾</div>
+          <div>
+            <div class="sol-name">Smart Receipts</div>
+            <div class="sol-category">Finance · Revenue</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">An intelligent revenue collection and receipting platform for institutions, enabling real-time payment tracking, reconciliation, and financial reporting.</div>
+          <ul class="sol-features">
+            <li>Multi-channel payment integration</li>
+            <li>Real-time revenue reconciliation</li>
+            <li>Automated audit trails & reporting</li>
+            <li>Bank & fintech gateway connectivity</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(34,197,94,0.15);color:#4ade80;border:1px solid rgba(34,197,94,0.25)">FinTech</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- POSTOCK -->
+      <div class="sol-card reveal" onclick="openModal('postock')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(251,191,36,0.1));border:1px solid rgba(245,158,11,0.25)">📦</div>
+          <div>
+            <div class="sol-name">POSTOCK</div>
+            <div class="sol-category">Procurement · Inventory</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">An enterprise procurement and inventory management system providing full control over purchase orders, stock levels, and supply chain operations.</div>
+          <ul class="sol-features">
+            <li>Purchase order lifecycle management</li>
+            <li>Real-time stock tracking & alerts</li>
+            <li>Vendor management & evaluation</li>
+            <li>Budget control & spend analytics</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)">ERP</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- PayMaster -->
+      <div class="sol-card reveal" onclick="openModal('paymaster')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(26,127,232,0.2),rgba(59,158,255,0.1));border:1px solid rgba(26,127,232,0.3)">💰</div>
+          <div>
+            <div class="sol-name">PayMaster</div>
+            <div class="sol-category">Payroll · HR</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A robust payroll and HR management platform for large institutions, handling complex salary structures, statutory deductions, and staff records.</div>
+          <ul class="sol-features">
+            <li>Complex salary grade management</li>
+            <li>PAYE, pension & NHF automation</li>
+            <li>Multi-bank salary disbursement</li>
+            <li>Leave, attendance & appraisal</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(26,127,232,0.15);color:#60a5fa;border:1px solid rgba(26,127,232,0.25)">HR/Payroll</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Bank Clearing & CTS -->
+      <div class="sol-card reveal" onclick="openModal('cts')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.2),rgba(248,113,113,0.1));border:1px solid rgba(239,68,68,0.25)">🏛️</div>
+          <div>
+            <div class="sol-name">Cheque Truncation System</div>
+            <div class="sol-category">Banking · Clearing</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A CBN-compliant Bank Clearing & Cheque Truncation System enabling end-to-end electronic cheque clearing, MICR processing, and inter-bank settlement.</div>
+          <ul class="sol-features">
+            <li>MICR line capture & validation</li>
+            <li>NIBSS clearing house integration</li>
+            <li>Fraud detection & signature verification</li>
+            <li>Real-time settlement reporting</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.25)">Banking</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Cheque Personalization -->
+      <div class="sol-card reveal" onclick="openModal('cheque-personalization')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(192,132,252,0.1));border:1px solid rgba(168,85,247,0.25)">🖨️</div>
+          <div>
+            <div class="sol-name">Cheque Personalization</div>
+            <div class="sol-category">Banking · Printing</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A specialized cheque personalization and printing management system for commercial banks, enabling high-volume MICR printing, inventory control, and dispatch tracking.</div>
+          <ul class="sol-features">
+            <li>High-volume MICR cheque printing</li>
+            <li>Account holder data management</li>
+            <li>Cheque inventory & dispatch tracking</li>
+            <li>Multi-branch print queue management</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(168,85,247,0.15);color:#c084fc;border:1px solid rgba(168,85,247,0.25)">Banking</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Digipro -->
+      <div class="sol-card reveal" onclick="openModal('digipro')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(20,184,166,0.2),rgba(45,212,191,0.1));border:1px solid rgba(20,184,166,0.25)">🔄</div>
+          <div>
+            <div class="sol-name">Digipro Software</div>
+            <div class="sol-category">Digital · Process</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A digital process automation and document management platform enabling paperless workflows, approvals, and institutional records digitization.</div>
+          <ul class="sol-features">
+            <li>End-to-end digital workflow engine</li>
+            <li>Document capture & OCR processing</li>
+            <li>Role-based approval routing</li>
+            <li>Compliance-ready audit logging</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(20,184,166,0.15);color:#2dd4bf;border:1px solid rgba(20,184,166,0.25)">Digital</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ══ -->
+<section id="industries">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 4rem">
+      <div class="section-label">Sectors We Serve</div>
+      <h2 class="section-title">Industries We Power</h2>
+      <p class="section-subtitle">Deep domain expertise across the most regulated and complex industries in Africa.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏦</span>
+        <div class="industry-name">Commercial Banking</div>
+        <div class="industry-desc">Clearing, settlement, core banking integrations, and digital banking transformation for Nigeria's leading commercial banks.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🎓</span>
+        <div class="industry-name">Universities & Tertiary</div>
+        <div class="industry-desc">Student information systems, results management, fee collection, and campus ERP solutions for federal and state universities.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏛️</span>
+        <div class="industry-name">Government & Parastatals</div>
+        <div class="industry-desc">e-Government platforms, payroll systems, procurement management, and digital service delivery for public institutions.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">📊</span>
+        <div class="industry-name">Pension Administration</div>
+        <div class="industry-desc">Contributor management, benefit computation, fund tracking, and regulatory reporting platforms for pension fund administrators.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏥</span>
+        <div class="industry-name">Healthcare</div>
+        <div class="industry-desc">Hospital information systems, patient records management, and billing solutions for healthcare institutions and HMOs.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏭</span>
+        <div class="industry-name">Manufacturing & Retail</div>
+        <div class="industry-desc">Inventory management, supply chain automation, and POS integration platforms for manufacturing and retail enterprises.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">⚡</span>
+        <div class="industry-name">Energy & Utilities</div>
+        <div class="industry-desc">Revenue management, metering systems, and customer management platforms for power distribution and utility companies.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">📡</span>
+        <div class="industry-name">Telecoms & Technology</div>
+        <div class="industry-desc">BSS/OSS support systems, subscriber management, and billing platform integrations for telecoms and ISPs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TECHNOLOGY ══ -->
+<section id="technology">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Our Stack</div>
+      <h2 class="section-title">Technology Expertise</h2>
+      <p class="section-subtitle">Enterprise-grade technology choices across every layer of the stack.</p>
+    </div>
+    <div class="tech-layout">
+      <div class="tech-categories reveal">
+        <div class="tech-cat active" onclick="switchTech(this,'backend')">
+          <span class="tech-cat-name">Backend & Core</span>
+          <span class="tech-cat-count">8 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'frontend')">
+          <span class="tech-cat-name">Frontend & Web</span>
+          <span class="tech-cat-count">6 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'database')">
+          <span class="tech-cat-name">Databases</span>
+          <span class="tech-cat-count">5 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'cloud')">
+          <span class="tech-cat-name">Cloud & DevOps</span>
+          <span class="tech-cat-count">7 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'security')">
+          <span class="tech-cat-name">Security & Compliance</span>
+          <span class="tech-cat-count">5 frameworks</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="tech-panel active" id="panel-backend">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#f89820"></div><div><div class="tech-item-name">Java EE</div><div class="tech-item-tier">Primary</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#512BD4"></div><div><div class="tech-item-name">.NET / C#</div><div class="tech-item-tier">Primary</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3776ab"></div><div><div class="tech-item-name">Python</div><div class="tech-item-tier">Analytics</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00ADD8"></div><div><div class="tech-item-name">Node.js</div><div class="tech-item-tier">APIs</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#6DB33F"></div><div><div class="tech-item-name">Spring Boot</div><div class="tech-item-tier">Microservices</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#512BD4"></div><div><div class="tech-item-name">ASP.NET Core</div><div class="tech-item-tier">Web APIs</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E44D26"></div><div><div class="tech-item-name">REST / SOAP</div><div class="tech-item-tier">Integration</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">Apache Kafka</div><div class="tech-item-tier">Messaging</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-frontend">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#61DAFB"></div><div><div class="tech-item-name">React</div><div class="tech-item-tier">Primary UI</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#42b883"></div><div><div class="tech-item-name">Vue.js</div><div class="tech-item-tier">Portals</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E44D26"></div><div><div class="tech-item-name">HTML5 / CSS3</div><div class="tech-item-tier">Foundation</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#F7DF1E"></div><div><div class="tech-item-name">TypeScript</div><div class="tech-item-tier">Typed JS</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#06B6D4"></div><div><div class="tech-item-name">Tailwind CSS</div><div class="tech-item-tier">Styling</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3178C6"></div><div><div class="tech-item-name">Angular</div><div class="tech-item-tier">Enterprise SPA</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-database">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#F80000"></div><div><div class="tech-item-name">Oracle DB</div><div class="tech-item-tier">Enterprise</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00758F"></div><div><div class="tech-item-name">MySQL</div><div class="tech-item-tier">Production</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#336791"></div><div><div class="tech-item-name">PostgreSQL</div><div class="tech-item-tier">Production</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#003B57"></div><div><div class="tech-item-name">MSSQL Server</div><div class="tech-item-tier">Enterprise</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#47A248"></div><div><div class="tech-item-name">MongoDB</div><div class="tech-item-tier">NoSQL</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-cloud">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#FF9900"></div><div><div class="tech-item-name">AWS</div><div class="tech-item-tier">Cloud</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#0078D4"></div><div><div class="tech-item-name">Azure</div><div class="tech-item-tier">Cloud</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#2496ED"></div><div><div class="tech-item-name">Docker</div><div class="tech-item-tier">Containers</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#326CE5"></div><div><div class="tech-item-name">Kubernetes</div><div class="tech-item-tier">Orchestration</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E34A26"></div><div><div class="tech-item-name">Git / CI-CD</div><div class="tech-item-tier">DevOps</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00C7B7"></div><div><div class="tech-item-name">Nginx</div><div class="tech-item-tier">Web Server</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">Terraform</div><div class="tech-item-tier">IaC</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-security">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">ISO 27001</div><div class="tech-item-tier">Framework</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3b9eff"></div><div><div class="tech-item-name">PCI DSS</div><div class="tech-item-tier">Payment</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#fbbf24"></div><div><div class="tech-item-name">CBN Guidelines</div><div class="tech-item-tier">Regulatory</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#c084fc"></div><div><div class="tech-item-name">NDPR</div><div class="tech-item-tier">Data Privacy</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#f87171"></div><div><div class="tech-item-name">OWASP</div><div class="tech-item-tier">Security</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASE STUDIES ══ -->
+<section id="case-studies">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Proven Impact</div>
+      <h2 class="section-title">Case Studies</h2>
+      <p class="section-subtitle">Real outcomes delivered to real institutions across Nigeria and Africa.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(239,68,68,0.12);color:#f87171;border:1px solid rgba(239,68,68,0.2)">Commercial Banking</div>
+          <div class="case-title">Cheque Truncation & Clearing Modernization</div>
+          <div class="case-client">Tier-1 Nigerian Commercial Bank</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">97%</div><div class="case-metric-label">Processing Accuracy</div></div>
+          <div class="case-metric"><div class="case-metric-num">60%</div><div class="case-metric-label">Clearing Time Reduced</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Deployed a full end-to-end MICR cheque truncation system integrated with NIBSS, replacing manual clearing with automated electronic processing.</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(99,102,241,0.12);color:#a78bfa;border:1px solid rgba(99,102,241,0.2)">Higher Education</div>
+          <div class="case-title">University-Wide Results & Records Platform</div>
+          <div class="case-client">Federal University, Nigeria</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">40K+</div><div class="case-metric-label">Students Managed</div></div>
+          <div class="case-metric"><div class="case-metric-num">100%</div><div class="case-metric-label">Paperless Records</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Implemented Results Manager and Smart Receipts across 12 faculties, replacing paper-based processes with an integrated digital academic management ecosystem.</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(34,197,94,0.12);color:#4ade80;border:1px solid rgba(34,197,94,0.2)">Pension Administration</div>
+          <div class="case-title">Pension Payroll & Benefits Automation</div>
+          <div class="case-client">State Pension Commission</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">₦2B+</div><div class="case-metric-label">Monthly Disbursements</div></div>
+          <div class="case-metric"><div class="case-metric-num">15K+</div><div class="case-metric-label">Pensioners Served</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Deployed PayMaster to automate pension benefit computation, multi-bank payment routing, and monthly disbursement reporting — eliminating payment backlogs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section id="why-us">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 4rem">
+      <div class="section-label">Our Differentiators</div>
+      <h2 class="section-title">Why Institutions Trust ADIPATS</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-item-icon">🏗️</div>
+          <div>
+            <div class="why-item-title">Institutional-Grade Architecture</div>
+            <div class="why-item-desc">We design systems to handle millions of transactions daily with high availability, fault tolerance, and disaster recovery built in from day one.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">🌍</div>
+          <div>
+            <div class="why-item-title">Deep Local Domain Expertise</div>
+            <div class="why-item-desc">Two decades of experience with Nigerian regulatory frameworks — CBN, PENCOM, NUC, NDPR — means our solutions are compliance-ready from day one.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">🔧</div>
+          <div>
+            <div class="why-item-title">Bespoke, Not Off-the-Shelf</div>
+            <div class="why-item-desc">Every solution is engineered specifically for your institution's workflows, data models, and operational realities — not adapted from a generic template.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">📞</div>
+          <div>
+            <div class="why-item-title">Dedicated Support & SLAs</div>
+            <div class="why-item-desc">Named support teams, documented SLAs, and 24/7 emergency response for mission-critical systems — because downtime is not an option.</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-metric-list">
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#22c55e"></div>
+              <div class="why-metric-name">System Uptime</div>
+            </div>
+            <div class="why-metric-val">99.9%</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#3b9eff"></div>
+              <div class="why-metric-name">Client Retention</div>
+            </div>
+            <div class="why-metric-val">94%</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#fbbf24"></div>
+              <div class="why-metric-name">Avg. Deployment Time</div>
+            </div>
+            <div class="why-metric-val">8 wks</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#c084fc"></div>
+              <div class="why-metric-name">Support Response SLA</div>
+            </div>
+            <div class="why-metric-val">4 hrs</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#f87171"></div>
+              <div class="why-metric-name">Projects Delivered On Time</div>
+            </div>
+            <div class="why-metric-val">92%</div>
+          </div>
+        </div>
+        <div class="why-cert">
+          <div class="cert-badge">
+            <div class="cert-badge-title">🛡️ CBN Compliant</div>
+            <div class="cert-badge-sub">Banking Regulations</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">📋 ISO Aligned</div>
+            <div class="cert-badge-sub">Software Standards</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">🔒 NDPR Ready</div>
+            <div class="cert-badge-sub">Data Protection</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">⚡ 24/7 Support</div>
+            <div class="cert-badge-sub">Mission Critical</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS ══ -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="clients-intro reveal">
+      <div class="section-label">Our Clients</div>
+      <h2 class="section-title">Trusted by Nigeria's Best</h2>
+      <p class="section-subtitle">From Tier-1 commercial banks to federal universities and pension administrators — Africa's most trusted institutions rely on ADIPATS.</p>
+    </div>
+  </div>
+
+  <!-- Marquee Row 1: Banks -->
+  <div class="clients-marquee-wrap">
+    <div class="clients-marquee" id="marquee1">
+      <div class="client-logo-card"><div class="client-name">Stanbic IBTC</div></div>
+      <div class="client-logo-card"><div class="client-name">UBA</div></div>
+      <div class="client-logo-card"><div class="client-name">Union Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Keystone Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Nova Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Lotus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Optimus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Alpha Morgan Bank</div></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="client-logo-card"><div class="client-name">Stanbic IBTC</div></div>
+      <div class="client-logo-card"><div class="client-name">UBA</div></div>
+      <div class="client-logo-card"><div class="client-name">Union Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Keystone Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Nova Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Lotus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Optimus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Alpha Morgan Bank</div></div>
+    </div>
+  </div>
+
+  <!-- Marquee Row 2: Universities & Others -->
+  <div class="clients-marquee-wrap">
+    <div class="clients-marquee clients-marquee-2">
+      <div class="client-logo-card"><div class="client-name">University of Lagos</div></div>
+      <div class="client-logo-card"><div class="client-name">Ahmadu Bello University</div></div>
+      <div class="client-logo-card"><div class="client-name">UNIPORT</div></div>
+      <div class="client-logo-card"><div class="client-name">Covenant University</div></div>
+      <div class="client-logo-card"><div class="client-name">Lagos PENCOM</div></div>
+      <div class="client-logo-card"><div class="client-name">State Pension Board</div></div>
+      <div class="client-logo-card"><div class="client-name">Federal MDAs</div></div>
+      <div class="client-logo-card"><div class="client-name">PHCN Successor DISCOs</div></div>
+      <!-- Duplicate -->
+      <div class="client-logo-card"><div class="client-name">University of Lagos</div></div>
+      <div class="client-logo-card"><div class="client-name">Ahmadu Bello University</div></div>
+      <div class="client-logo-card"><div class="client-name">UNIPORT</div></div>
+      <div class="client-logo-card"><div class="client-name">Covenant University</div></div>
+      <div class="client-logo-card"><div class="client-name">Lagos PENCOM</div></div>
+      <div class="client-logo-card"><div class="client-name">State Pension Board</div></div>
+      <div class="client-logo-card"><div class="client-name">Federal MDAs</div></div>
+      <div class="client-logo-card"><div class="client-name">PHCN Successor DISCOs</div></div>
+    </div>
+  </div>
+
+  <div class="section-inner">
+    <div class="clients-sectors reveal">
+      <div class="sector-count"><div class="sector-count-num">8+</div><div class="sector-count-label">Commercial Banks</div></div>
+      <div class="sector-count"><div class="sector-count-num">15+</div><div class="sector-count-label">Universities & Tertiary</div></div>
+      <div class="sector-count"><div class="sector-count-num">12+</div><div class="sector-count-label">Government Agencies</div></div>
+      <div class="sector-count"><div class="sector-count-num">10+</div><div class="sector-count-label">Pension & Insurance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECURITY ══ -->
+<section id="security">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 4rem">
+      <div class="section-label">Security & Trust</div>
+      <h2 class="section-title">Banking-Grade Security Architecture</h2>
+      <p class="section-subtitle">Every system we build is engineered with security-by-design principles, meeting the stringent requirements of Nigeria's financial sector.</p>
+    </div>
+    <div class="security-layout">
+      <div class="security-pillars reveal">
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🔐</div>
+          <div class="sec-pillar-title">End-to-End Encryption</div>
+          <div class="sec-pillar-desc">AES-256 encryption for data at rest and TLS 1.3 for all data in transit across our enterprise systems.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">👁️</div>
+          <div class="sec-pillar-title">Real-Time Monitoring</div>
+          <div class="sec-pillar-desc">24/7 system monitoring, anomaly detection, and automated alerts for all production deployments.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🛡️</div>
+          <div class="sec-pillar-title">Access Control</div>
+          <div class="sec-pillar-desc">Role-based access control (RBAC), multi-factor authentication, and privileged access management built into every platform.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">📋</div>
+          <div class="sec-pillar-title">Audit & Compliance</div>
+          <div class="sec-pillar-desc">Immutable audit trails, comprehensive logging, and automated compliance reporting for all regulated environments.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🔄</div>
+          <div class="sec-pillar-title">Disaster Recovery</div>
+          <div class="sec-pillar-desc">Multi-site backup architectures, automated failover, and documented RTO/RPO targets aligned to CBN guidelines.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🧪</div>
+          <div class="sec-pillar-title">Penetration Testing</div>
+          <div class="sec-pillar-desc">Regular third-party security assessments, OWASP-aligned code reviews, and vulnerability remediation programs.</div>
+        </div>
+      </div>
+      <div class="security-compliance reveal">
+        <div class="compliance-title">Regulatory Alignment</div>
+        <div class="compliance-list">
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">CBN IT Standards & Risk Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">Nigeria Data Protection Regulation (NDPR)</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">PENCOM Retirement Savings Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">PCI DSS Payment Card Standards</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">ISO 27001 Information Security Framework</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">NIBSS Interbank Settlement Standards</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">NUC University Management Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">OWASP Top 10 Security Standards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Start Your Enterprise Journey</h2>
+      <p class="section-subtitle">Ready to modernize your institution's technology stack? Our team of enterprise architects are here to help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-locations">
+          <div class="contact-location">
+            <div class="contact-loc-header">
+              <div class="contact-loc-icon">🏢</div>
+              <div class="contact-loc-title">Head Office — Abuja</div>
+            </div>
+            <div class="contact-loc-address">
+              Plot 1234, Maitama District,<br>
+              Abuja, Federal Capital Territory,<br>
+              Nigeria
+            </div>
+            <div class="contact-loc-details">
+              <div class="contact-detail">📞 <a href="tel:+2348001234567">+234 800 123 4567</a></div>
+              <div class="contact-detail">✉️ <a href="mailto:info@adipats.com">info@adipats.com</a></div>
+            </div>
+          </div>
+          <div class="contact-location">
+            <div class="contact-loc-header">
+              <div class="contact-loc-icon">🏙️</div>
+              <div class="contact-loc-title">Lagos Office</div>
+            </div>
+            <div class="contact-loc-address">
+              14 Commercial Avenue,<br>
+              Sabo, Yaba,<br>
+              Lagos State, Nigeria
+            </div>
+            <div class="contact-loc-details">
+              <div class="contact-detail">📞 <a href="tel:+2348009876543">+234 800 987 6543</a></div>
+              <div class="contact-detail">✉️ <a href="mailto:lagos@adipats.com">lagos@adipats.com</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-pin">📍</div>
+          <div class="map-text">Nigeria · Abuja HQ &amp; Lagos Office</div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">Fill out the form and our enterprise team will respond within 24 hours.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Work Email</label>
+            <input class="form-input" type="email" placeholder="john@institution.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" placeholder="+234 800 000 0000"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Institution / Company</label>
+            <input class="form-input" type="text" placeholder="Your Organization"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Industry</label>
+            <select class="form-select">
+              <option value="">Select Industry</option>
+              <option>Commercial Banking</option>
+              <option>Higher Education</option>
+              <option>Pension Administration</option>
+              <option>Government / Parastatal</option>
+              <option>Healthcare</option>
+              <option>Manufacturing & Retail</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">How can we help?</label>
+            <textarea class="form-textarea" placeholder="Describe your project, system requirements, or challenges..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="nav-logo" style="margin-bottom:1rem">
+          <div class="logo-mark">AP</div>
+          ADIPATS Consulting
+        </div>
+        <div class="footer-brand-desc">Bespoke enterprise software development for Africa's most trusted institutions. Building mission-critical systems that power banks, universities, pension administrators, and government agencies.</div>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+          <a href="#" class="footer-social" aria-label="Facebook">f</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Solutions</div>
+        <ul class="footer-links">
+          <li><a href="#">Results Manager</a></li>
+          <li><a href="#">Smart Receipts</a></li>
+          <li><a href="#">POSTOCK</a></li>
+          <li><a href="#">PayMaster</a></li>
+          <li><a href="#">Cheque Truncation System</a></li>
+          <li><a href="#">Digipro Software</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Industries</div>
+        <ul class="footer-links">
+          <li><a href="#">Banking & Finance</a></li>
+          <li><a href="#">Universities</a></li>
+          <li><a href="#">Government</a></li>
+          <li><a href="#">Pension & Insurance</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Manufacturing</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">News & Insights</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 ADIPATS Consulting. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SOLUTION MODALS ══ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div id="modal-title-area"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+// ══ MODAL DATA ══
+const modalData = {
+  'results-manager': {
+    icon:'🎓', name:'Results Manager', category:'Academic Results Management System',
+    color:'rgba(99,102,241,0.2)', border:'rgba(99,102,241,0.3)', accent:'#a78bfa',
+    overview:'Results Manager is ADIPATS\'s flagship academic results management platform, trusted by federal and state universities across Nigeria. It digitalizes the entire academic results lifecycle — from departmental data entry through faculty collation, senate approval, to final transcript issuance.',
+    features:[
+      {icon:'📊',text:'Automated GPA/CGPA computation with customizable grading scales'},
+      {icon:'✍️',text:'Multi-level entry and approval workflows (lecturer → HOD → Dean → Senate)'},
+      {icon:'📜',text:'Secure transcript and certificate generation with digital verification'},
+      {icon:'👤',text:'Comprehensive student academic history and performance tracking'},
+      {icon:'📋',text:'Carry-over, special exam, and supplementary management'},
+      {icon:'🔒',text:'Role-based access with full audit trail for all result changes'},
+      {icon:'📱',text:'Student self-service portal for result checking and transcript requests'},
+      {icon:'🔗',text:'JAMB, NYSC, and WAEC verification integrations'},
+    ],
+    benefits:['Eliminates result leakage and manipulation','Reduces transcript processing from weeks to hours','Full regulatory compliance with NUC standards','Handles 50,000+ students on a single deployment','Proven across 15+ Nigerian universities']
+  },
+  'smart-receipts': {
+    icon:'🧾', name:'Smart Receipts', category:'Institutional Revenue Collection Platform',
+    color:'rgba(34,197,94,0.2)', border:'rgba(34,197,94,0.3)', accent:'#4ade80',
+    overview:'Smart Receipts is a comprehensive revenue management and receipting platform designed for universities, government agencies, and large institutions. It unifies all revenue streams — school fees, levies, fines — into a single real-time dashboard with automated bank reconciliation.',
+    features:[
+      {icon:'💳',text:'Multi-channel payment: bank branch, POS, online, USSD, mobile'},
+      {icon:'🔄',text:'Real-time payment reconciliation against bank statements'},
+      {icon:'📊',text:'Revenue dashboards with drill-down analytics by faculty/department'},
+      {icon:'🧮',text:'Automated fee schedule computation and invoice generation'},
+      {icon:'🏦',text:'Direct integration with multiple bank payment gateways'},
+      {icon:'📧',text:'Automated e-receipt delivery via email and SMS'},
+      {icon:'🔍',text:'Payment dispute management and resolution workflows'},
+      {icon:'📋',text:'Statutory reporting for external auditors and regulators'},
+    ],
+    benefits:['Eliminates revenue leakage and cash handling risks','Real-time visibility into institutional cash flows','Supports split payments and payment plans','Integrates with Remita, IPPIS, and Interswitch','Proven at institutions collecting ₦5B+ annually']
+  },
+  'postock': {
+    icon:'📦', name:'POSTOCK', category:'Enterprise Procurement & Inventory Management',
+    color:'rgba(245,158,11,0.2)', border:'rgba(245,158,11,0.3)', accent:'#fbbf24',
+    overview:'POSTOCK is a full-cycle enterprise procurement and stock management system that gives organizations complete visibility and control over their supply chain — from purchase requisition through vendor selection, delivery, and stock movement.',
+    features:[
+      {icon:'📝',text:'Purchase requisition and multi-level approval workflows'},
+      {icon:'🏭',text:'Vendor prequalification, bidding, and performance evaluation'},
+      {icon:'📦',text:'Multi-warehouse stock management with bin location tracking'},
+      {icon:'⚠️',text:'Automated reorder point alerts and minimum stock management'},
+      {icon:'💰',text:'Budget integration and commitment accounting control'},
+      {icon:'📊',text:'Spend analytics with category and vendor benchmarking'},
+      {icon:'🔗',text:'Integration with finance and GL systems'},
+      {icon:'📋',text:'Government procurement compliance (BPPP, due process)'},
+    ],
+    benefits:['Eliminates maverick spending and unauthorized purchases','Full procurement audit trail for regulators and auditors','Reduces procurement cycle time by up to 50%','Supports IFRS-compliant inventory valuation methods','Scalable to thousands of SKUs and hundreds of locations']
+  },
+  'paymaster': {
+    icon:'💰', name:'PayMaster', category:'Enterprise Payroll & HR Management',
+    color:'rgba(26,127,232,0.2)', border:'rgba(26,127,232,0.3)', accent:'#60a5fa',
+    overview:'PayMaster is a powerful payroll and human resource management system built for large institutions with complex salary structures. It automates all statutory deductions, manages staff records, and supports multi-bank payment disbursement.',
+    features:[
+      {icon:'💼',text:'Unlimited salary grade and step management for any institution'},
+      {icon:'🧮',text:'Automated PAYE tax, pension (8%/10%), NHF, and NHIS computation'},
+      {icon:'🏦',text:'Multi-bank salary advice generation in bank-approved formats'},
+      {icon:'👥',text:'Full employee lifecycle: onboarding, transfers, promotions, exit'},
+      {icon:'📅',text:'Leave management, attendance tracking, and biometric integration'},
+      {icon:'📊',text:'Management payroll reports and salary cost center analysis'},
+      {icon:'🔗',text:'Integration with IPPIS, PENCOM, FIRS e-TIMS'},
+      {icon:'📋',text:'Pension remittance schedules for all licensed PFAs'},
+    ],
+    benefits:['Handles complex salary structures with hundreds of allowances','PENCOM and FIRS compliant out-of-the-box','Processes payroll for 10,000+ staff in minutes','Eliminates manual payroll errors and ghost workers','Proven across state governments and large institutions']
+  },
+  'cts': {
+    icon:'🏛️', name:'Cheque Truncation System', category:'Bank Clearing & Settlement',
+    color:'rgba(239,68,68,0.2)', border:'rgba(239,68,68,0.3)', accent:'#f87171',
+    overview:'ADIPATS\'s Bank Clearing & Cheque Truncation System (CTS) is a CBN and NIBSS-compliant platform that enables commercial banks to process cheques electronically — eliminating physical movement of paper instruments while maintaining full regulatory compliance.',
+    features:[
+      {icon:'🖥️',text:'High-speed MICR cheque scanning and data capture at branch level'},
+      {icon:'✅',text:'MICR line validation, amount verification, and signature comparison'},
+      {icon:'🔗',text:'Direct NIBSS clearing house connectivity for inter-bank settlement'},
+      {icon:'🔍',text:'Built-in fraud detection rules engine and watchlist screening'},
+      {icon:'📊',text:'Real-time clearing dashboards and settlement position reporting'},
+      {icon:'🏦',text:'Core banking integration for automated debit/credit posting'},
+      {icon:'📋',text:'CBN-format regulatory submissions and return cheque management'},
+      {icon:'🗃️',text:'Cheque image archive with 7-year digital storage and retrieval'},
+    ],
+    benefits:['Fully compliant with CBN CTS Regulations','Reduces clearing cycle from T+3 to T+1','Processes thousands of cheques per hour','Eliminates physical cheque transportation costs','Deployed at multiple Tier-1 and Tier-2 Nigerian banks']
+  },
+  'cheque-personalization': {
+    icon:'🖨️', name:'Cheque Personalization System', category:'Cheque Printing & Management',
+    color:'rgba(168,85,247,0.2)', border:'rgba(168,85,247,0.3)', accent:'#c084fc',
+    overview:'The ADIPATS Cheque Personalization System is a specialized high-volume MICR cheque printing and management platform for commercial banks. It manages the complete cheque lifecycle from customer request through personalization, quality control, and secure branch dispatch.',
+    features:[
+      {icon:'🖨️',text:'High-volume MICR E-13B encoding and cheque printing management'},
+      {icon:'👤',text:'Customer account data management and cheque book specifications'},
+      {icon:'📦',text:'Cheque inventory management across all branches and vaults'},
+      {icon:'🚚',text:'Dispatch tracking and chain of custody management'},
+      {icon:'✅',text:'Quality control scanning and defective cheque quarantine'},
+      {icon:'🔒',text:'Security stock control with dual authorization and physical count reconciliation'},
+      {icon:'📊',text:'Cheque usage analytics and fraud pattern reporting'},
+      {icon:'🔗',text:'Integration with core banking for account holder data sync'},
+    ],
+    benefits:['Reduces cheque book production cycle time significantly','Full accountability for all cheque security stock','Integrates with existing MICR printing hardware','Minimizes lost and stolen blank cheque exposure','Supports multiple cheque designs and security features']
+  },
+  'digipro': {
+    icon:'🔄', name:'Digipro Software', category:'Digital Process Automation',
+    color:'rgba(20,184,166,0.2)', border:'rgba(20,184,166,0.3)', accent:'#2dd4bf',
+    overview:'Digipro is ADIPATS\'s digital process automation and document management platform. It enables institutions to transition from paper-based workflows to fully digitized, automated processes — improving speed, accountability, and compliance across the organization.',
+    features:[
+      {icon:'⚙️',text:'Visual business process modeler for non-technical process owners'},
+      {icon:'📄',text:'Document capture with OCR and intelligent data extraction'},
+      {icon:'✅',text:'Configurable multi-level approval and escalation routing'},
+      {icon:'📧',text:'Automated notifications via email, SMS, and in-app alerts'},
+      {icon:'📊',text:'Process performance dashboards and SLA monitoring'},
+      {icon:'🔒',text:'Tamper-proof digital audit trail for all process activities'},
+      {icon:'🔗',text:'REST API for integration with ERP, CRM, and legacy systems'},
+      {icon:'📱',text:'Mobile-responsive interface for approvals on any device'},
+    ],
+    benefits:['Reduces paper consumption and physical storage costs','Speeds up approval processes from days to hours','Complete audit trail for compliance and accountability','No-code process configuration by business users','Scalable from departmental to enterprise-wide deployment']
+  }
+};
+
+function openModal(id) {
+  const d = modalData[id];
+  if(!d) return;
+  document.getElementById('modal-title-area').innerHTML = `
+    <div style="display:flex;align-items:center;gap:1rem">
+      <div style="width:52px;height:52px;border-radius:12px;background:${d.color};border:1px solid ${d.border};display:flex;align-items:center;justify-content:center;font-size:1.375rem;flex-shrink:0">${d.icon}</div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:1.25rem;font-weight:800">${d.name}</div>
+        <div style="font-size:0.8125rem;color:var(--white-60);font-family:var(--font-mono)">${d.category}</div>
+      </div>
+    </div>`;
+  document.getElementById('modal-content').innerHTML = `
+    <p style="font-size:0.9375rem;color:var(--white-60);line-height:1.8;margin-bottom:2rem">${d.overview}</p>
+    <div class="modal-section-title">Key Features</div>
+    <div class="modal-features">
+      ${d.features.map(f=>`<div class="modal-feature-item"><span class="modal-feature-icon">${f.icon}</span><span class="modal-feature-text">${f.text}</span></div>`).join('')}
+    </div>
+    <div class="modal-section-title">Enterprise Benefits</div>
+    <div class="modal-benefits">
+      ${d.benefits.map(b=>`<div class="modal-benefit">${b}</div>`).join('')}
+    </div>
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;gap:1rem">
+      <a href="#contact" onclick="closeModal()" class="btn btn-primary btn-sm">Request Demo</a>
+      <a href="#contact" onclick="closeModal()" class="btn btn-secondary btn-sm">Contact Sales</a>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOnOverlay(e) {
+  if(e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+// ══ TECH PANEL SWITCHER ══
+function switchTech(el, panel) {
+  document.querySelectorAll('.tech-cat').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tech-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-'+panel).classList.add('active');
+}
+
+// ══ MOBILE MENU ══
+document.getElementById('hamburger').addEventListener('click', function(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+document.querySelectorAll('.mobile-menu a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+});
+
+// ══ FORM SUBMIT ══
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target;
+  btn.innerHTML = '✓ Message Sent — We\'ll be in touch!';
+  btn.style.background = 'linear-gradient(135deg,#16a34a,#15803d)';
+  setTimeout(()=>{
+    btn.innerHTML = 'Send Message <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    btn.style.background = '';
+  }, 3000);
+}
+
+// ══ PARTICLES ══
+(function(){
+  const container = document.getElementById('particles');
+  const count = window.innerWidth < 768 ? 12 : 24;
+  for(let i=0;i<count;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random()*3+1;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*12+8}s;
+      animation-delay:${Math.random()*10}s;
+      opacity:${Math.random()*0.5+0.1};
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ══ SCROLL PROGRESS ══
+window.addEventListener('scroll',()=>{
+  const el = document.getElementById('scroll-progress');
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  el.style.width = pct + '%';
+}, {passive:true});
+
+// ══ NAV SCROLL ══
+window.addEventListener('scroll',()=>{
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// ══ GSAP ANIMATIONS ══
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// Hero entrance
+gsap.timeline()
+  .from('#hero-badge',   {opacity:0,y:20,duration:0.7,ease:'power3.out'}, 0.3)
+  .from('#hero-headline',{opacity:0,y:40,duration:0.9,ease:'power3.out'}, 0.5)
+  .from('#hero-sub',     {opacity:0,y:30,duration:0.7,ease:'power3.out'}, 0.75)
+  .from('#hero-actions', {opacity:0,y:20,duration:0.6,ease:'power3.out'}, 0.95)
+  .from('#hero-stats .stat-item',{opacity:0,y:30,stagger:0.1,duration:0.6,ease:'power3.out'}, 1.1);
+
+// Counter animation
+function animateCounter(el){
+  const target = parseInt(el.getAttribute('data-target'));
+  const start = performance.now();
+  const duration = 1800;
+  function update(now){
+    const t = Math.min((now-start)/duration,1);
+    const ease = 1-Math.pow(1-t,3);
+    el.textContent = Math.round(ease*target);
+    if(t<1) requestAnimationFrame(update);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(update);
+}
+
+// Trigger counters when hero stats visible
+ScrollTrigger.create({
+  trigger:'#hero-stats',
+  start:'top 85%',
+  onEnter:()=>document.querySelectorAll('.counter').forEach(animateCounter)
+});
+
+// Reveal animations for all .reveal elements
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.fromTo(el,
+    {opacity:0,y:50},
+    {opacity:1,y:0,duration:0.8,ease:'power3.out',
+     scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}
+  );
+});
+
+// Smooth nav links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      gsap.to(window,{scrollTo:{y:target,offsetY:72},duration:1,ease:'power3.inOut'});
+    }
+  });
+});
+
+// Active nav tracking
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('[data-nav]');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>{
+        l.classList.toggle('active', l.getAttribute('data-nav') === e.target.id);
+      });
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="ADIPATS Consulting — Bespoke enterprise software development for banks, universities, pension administrators, and government agencies in Nigeria and Africa."/>
+<meta name="keywords" content="enterprise software, Nigeria, banking software, pension software, university software, fintech, ADIPATS"/>
+<meta property="og:title" content="ADIPATS Consulting — Enterprise Software Development"/>
+<meta property="og:description" content="Mission-critical enterprise systems engineered for Africa's most trusted institutions."/>
+<title>ADIPATS Consulting — Enterprise Software Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- ══ NAVIGATION ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-mark">AP</div>
+      ADIPATS
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#services" data-nav="services">Services</a></li>
+      <li><a href="#solutions" data-nav="solutions">Solutions</a></li>
+      <li><a href="#industries" data-nav="industries">Industries</a></li>
+      <li><a href="#clients" data-nav="clients">Clients</a></li>
+      <li><a href="#security" data-nav="security">Security</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="#services">Services</a>
+  <a href="#solutions">Solutions</a>
+  <a href="#industries">Industries</a>
+  <a href="#clients">Clients</a>
+  <a href="#security">Security</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-canvas">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-glow-3"></div>
+    <div class="hero-particles" id="particles"></div>
+  </div>
+  <div class="hero-content">
+
+    <h1 class="hero-headline" id="hero-headline">
+      Enterprise Software Solutions <span class="accent">Built for </span><span class="gold">Performance, Security<br />  and Growth</span>
+    </h1>
+  
+    <p class="hero-sub" id="hero-sub">
+      ADIPATS Consulting engineers bespoke enterprise software for banks, universities, pension administrators, and government agencies — built for performance, security, and scale.
+    </p>
+    <div class="hero-actions" id="hero-actions">
+      <a href="#solutions" class="btn btn-primary">
+        Explore Our Solutions 
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-secondary">Request Consultation  </a>
+    </div>
+    <div class="hero-stats" id="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="20">0</span>+</div>
+        <div class="stat-label">Years in Enterprise</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="12">0</span>+</div>
+        <div class="stat-label">Enterprise Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="7">0</span></div>
+        <div class="stat-label">Core Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="99">0</span>.<span style="color:var(--blue-accent)">9</span>%</div>
+        <div class="stat-label">System Uptime SLA</div>
+      </div>
+    </div>
+  <!-- </div>
+    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span style="color:var(--white-60)">Scroll</span>
+    <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+  </div> -->
+</section>
+
+<!-- ══ ABOUT ══ -->
+<!-- <section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      
+      <div class="about-text reveal">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Engineering the Infrastructure of Tomorrow's Africa</h2>
+        <p>ADIPATS Consulting is a Nigerian enterprise software company with over two decades of proven excellence building mission-critical systems for the continent's most respected financial institutions, universities, and government bodies.</p>
+        <p>We don't build generic software. We architect bespoke, institution-grade platforms that handle billions in transactions, millions of students, and thousands of pension beneficiaries — reliably, securely, and at scale.</p>
+        <p>From cheque truncation systems for commercial banks to pension management platforms for retirement administrators, our solutions power the invisible infrastructure that keeps Africa's economy running.</p>
+        <div class="about-pillars">
+          <span class="pillar">Bespoke Development</span>
+          <span class="pillar">CBN Compliance</span>
+          <span class="pillar">Enterprise Architecture</span>
+          <span class="pillar">Agile Delivery</span>
+          <span class="pillar">24/7 Support</span>
+          <span class="pillar">Local Expertise</span>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="about-badge-grid">
+            <div class="about-badge">
+              <div class="about-badge-icon">🏦</div>
+              <div class="about-badge-title">Banking Systems</div>
+              <div class="about-badge-sub">Tier-1 Grade Architecture</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">🔐</div>
+              <div class="about-badge-title">Security First</div>
+              <div class="about-badge-sub">CBN & ISO Aligned</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">⚡</div>
+              <div class="about-badge-title">High Performance</div>
+              <div class="about-badge-sub">99.9% Uptime SLA</div>
+            </div>
+            <div class="about-badge">
+              <div class="about-badge-icon">🌍</div>
+              <div class="about-badge-title">Pan-African Reach</div>
+              <div class="about-badge-sub">Deployed Across Africa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Enterprise Services</h2>
+      <p class="section-subtitle">End-to-end software engineering services tailored to the unique complexity of enterprise and institutional environments.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Bespoke Software Development</div>
+        <div class="service-desc">Custom enterprise applications engineered from the ground up to solve your institution's most complex operational challenges.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Systems Integration</div>
+        <div class="service-desc">Seamless integration of legacy systems, third-party APIs, and modern platforms into a unified, cohesive enterprise architecture.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏦</div>
+        <div class="service-title">Banking & Fintech Solutions</div>
+        <div class="service-desc">CBN-compliant banking systems including clearing, settlement, cheque management, and core banking integrations.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">☁️</div>
+        <div class="service-title">Cloud & Infrastructure</div>
+        <div class="service-desc">Enterprise cloud migration, hybrid infrastructure design, and high-availability architectures for mission-critical workloads.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎓</div>
+        <div class="service-title">EdTech & University Systems</div>
+        <div class="service-desc">Comprehensive university management platforms covering student records, examinations, portals, and academic administration.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🛡️</div>
+        <div class="service-title">Compliance & Security Consulting</div>
+        <div class="service-desc">Regulatory compliance audits, security architecture reviews, and implementation of industry-standard frameworks for financial institutions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTIONS ══ -->
+<section id="solutions">
+  <div class="section-inner">
+    <div class="solutions-header reveal">
+      <div>
+        <div class="section-label">Our Products</div>
+        <h2 class="section-title">Flagship Solutions</h2>
+        <p class="section-subtitle">Battle-tested enterprise products deployed across Africa's top institutions.</p>
+      </div>
+    </div>
+    <div class="solutions-grid" id="solutions-grid">
+
+      <!-- Results Manager -->
+      <div class="sol-card reveal" onclick="openModal('results-manager')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(167,139,250,0.1));border:1px solid rgba(99,102,241,0.25)">🎓</div>
+          <div>
+            <div class="sol-name">Results Manager</div>
+            <div class="sol-category">Academic · University</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A comprehensive academic results management system for universities and tertiary institutions — from data entry to transcript generation.</div>
+          <ul class="sol-features">
+            <li>Automated result computation & GPA</li>
+            <li>Multi-department senate approval workflow</li>
+            <li>Transcript & certificate generation</li>
+            <li>Student academic history management</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(99,102,241,0.15);color:#a78bfa;border:1px solid rgba(99,102,241,0.25)">Education</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Smart Receipts -->
+      <div class="sol-card reveal" onclick="openModal('smart-receipts')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(34,197,94,0.2),rgba(16,185,129,0.1));border:1px solid rgba(34,197,94,0.25)">🧾</div>
+          <div>
+            <div class="sol-name">Smart Receipts</div>
+            <div class="sol-category">Finance · Revenue</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">An intelligent revenue collection and receipting platform for institutions, enabling real-time payment tracking, reconciliation, and financial reporting.</div>
+          <ul class="sol-features">
+            <li>Multi-channel payment integration</li>
+            <li>Real-time revenue reconciliation</li>
+            <li>Automated audit trails & reporting</li>
+            <li>Bank & fintech gateway connectivity</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(34,197,94,0.15);color:#4ade80;border:1px solid rgba(34,197,94,0.25)">FinTech</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- POSTOCK -->
+      <div class="sol-card reveal" onclick="openModal('postock')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(251,191,36,0.1));border:1px solid rgba(245,158,11,0.25)">📦</div>
+          <div>
+            <div class="sol-name">POSTOCK</div>
+            <div class="sol-category">Procurement · Inventory</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">An enterprise procurement and inventory management system providing full control over purchase orders, stock levels, and supply chain operations.</div>
+          <ul class="sol-features">
+            <li>Purchase order lifecycle management</li>
+            <li>Real-time stock tracking & alerts</li>
+            <li>Vendor management & evaluation</li>
+            <li>Budget control & spend analytics</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)">ERP</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- PayMaster -->
+      <div class="sol-card reveal" onclick="openModal('paymaster')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(26,127,232,0.2),rgba(59,158,255,0.1));border:1px solid rgba(26,127,232,0.3)">💰</div>
+          <div>
+            <div class="sol-name">PayMaster</div>
+            <div class="sol-category">Payroll · HR</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A robust payroll and HR management platform for large institutions, handling complex salary structures, statutory deductions, and staff records.</div>
+          <ul class="sol-features">
+            <li>Complex salary grade management</li>
+            <li>PAYE, pension & NHF automation</li>
+            <li>Multi-bank salary disbursement</li>
+            <li>Leave, attendance & appraisal</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(26,127,232,0.15);color:#60a5fa;border:1px solid rgba(26,127,232,0.25)">HR/Payroll</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Bank Clearing & CTS -->
+      <div class="sol-card reveal" onclick="openModal('cts')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.2),rgba(248,113,113,0.1));border:1px solid rgba(239,68,68,0.25)">🏛️</div>
+          <div>
+            <div class="sol-name">Cheque Truncation System</div>
+            <div class="sol-category">Banking · Clearing</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A CBN-compliant Bank Clearing & Cheque Truncation System enabling end-to-end electronic cheque clearing, MICR processing, and inter-bank settlement.</div>
+          <ul class="sol-features">
+            <li>MICR line capture & validation</li>
+            <li>NIBSS clearing house integration</li>
+            <li>Fraud detection & signature verification</li>
+            <li>Real-time settlement reporting</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.25)">Banking</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Cheque Personalization -->
+      <div class="sol-card reveal" onclick="openModal('cheque-personalization')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(192,132,252,0.1));border:1px solid rgba(168,85,247,0.25)">🖨️</div>
+          <div>
+            <div class="sol-name">Cheque Personalization</div>
+            <div class="sol-category">Banking · Printing</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A specialized cheque personalization and printing management system for commercial banks, enabling high-volume MICR printing, inventory control, and dispatch tracking.</div>
+          <ul class="sol-features">
+            <li>High-volume MICR cheque printing</li>
+            <li>Account holder data management</li>
+            <li>Cheque inventory & dispatch tracking</li>
+            <li>Multi-branch print queue management</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(168,85,247,0.15);color:#c084fc;border:1px solid rgba(168,85,247,0.25)">Banking</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+      <!-- Digipro -->
+      <div class="sol-card reveal" onclick="openModal('digipro')">
+        <div class="sol-card-header">
+          <div class="sol-icon" style="background:linear-gradient(135deg,rgba(20,184,166,0.2),rgba(45,212,191,0.1));border:1px solid rgba(20,184,166,0.25)">🔄</div>
+          <div>
+            <div class="sol-name">Digipro Software</div>
+            <div class="sol-category">Digital · Process</div>
+          </div>
+        </div>
+        <div class="sol-card-body">
+          <div class="sol-desc">A digital process automation and document management platform enabling paperless workflows, approvals, and institutional records digitization.</div>
+          <ul class="sol-features">
+            <li>End-to-end digital workflow engine</li>
+            <li>Document capture & OCR processing</li>
+            <li>Role-based approval routing</li>
+            <li>Compliance-ready audit logging</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-badge" style="background:rgba(20,184,166,0.15);color:#2dd4bf;border:1px solid rgba(20,184,166,0.25)">Digital</span>
+          <span class="sol-link">View Details →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ══ -->
+<section id="industries">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 4rem">
+      <div class="section-label">Sectors We Serve</div>
+      <h2 class="section-title">Industries We Power</h2>
+      <p class="section-subtitle">Deep domain expertise across the most regulated and complex industries in Africa.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏦</span>
+        <div class="industry-name">Commercial Banking</div>
+        <div class="industry-desc">Clearing, settlement, core banking integrations, and digital banking transformation for Nigeria's leading commercial banks.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🎓</span>
+        <div class="industry-name">Universities & Tertiary</div>
+        <div class="industry-desc">Student information systems, results management, fee collection, and campus ERP solutions for federal and state universities.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏛️</span>
+        <div class="industry-name">Government & Parastatals</div>
+        <div class="industry-desc">e-Government platforms, payroll systems, procurement management, and digital service delivery for public institutions.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">📊</span>
+        <div class="industry-name">Pension Administration</div>
+        <div class="industry-desc">Contributor management, benefit computation, fund tracking, and regulatory reporting platforms for pension fund administrators.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏥</span>
+        <div class="industry-name">Healthcare</div>
+        <div class="industry-desc">Hospital information systems, patient records management, and billing solutions for healthcare institutions and HMOs.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">🏭</span>
+        <div class="industry-name">Manufacturing & Retail</div>
+        <div class="industry-desc">Inventory management, supply chain automation, and POS integration platforms for manufacturing and retail enterprises.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">⚡</span>
+        <div class="industry-name">Energy & Utilities</div>
+        <div class="industry-desc">Revenue management, metering systems, and customer management platforms for power distribution and utility companies.</div>
+      </div>
+      <div class="industry-card reveal">
+        <span class="industry-emoji">📡</span>
+        <div class="industry-name">Telecoms & Technology</div>
+        <div class="industry-desc">BSS/OSS support systems, subscriber management, and billing platform integrations for telecoms and ISPs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TECHNOLOGY ══ -->
+<section id="technology">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Our Stack</div>
+      <h2 class="section-title">Technology Expertise</h2>
+      <p class="section-subtitle">Enterprise-grade technology choices across every layer of the stack.</p>
+    </div>
+    <div class="tech-layout">
+      <div class="tech-categories reveal">
+        <div class="tech-cat active" onclick="switchTech(this,'backend')">
+          <span class="tech-cat-name">Backend & Core</span>
+          <span class="tech-cat-count">8 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'frontend')">
+          <span class="tech-cat-name">Frontend & Web</span>
+          <span class="tech-cat-count">6 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'database')">
+          <span class="tech-cat-name">Databases</span>
+          <span class="tech-cat-count">5 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'cloud')">
+          <span class="tech-cat-name">Cloud & DevOps</span>
+          <span class="tech-cat-count">7 technologies</span>
+        </div>
+        <div class="tech-cat" onclick="switchTech(this,'security')">
+          <span class="tech-cat-name">Security & Compliance</span>
+          <span class="tech-cat-count">5 frameworks</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="tech-panel active" id="panel-backend">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#f89820"></div><div><div class="tech-item-name">Java EE</div><div class="tech-item-tier">Primary</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#512BD4"></div><div><div class="tech-item-name">.NET / C#</div><div class="tech-item-tier">Primary</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3776ab"></div><div><div class="tech-item-name">Python</div><div class="tech-item-tier">Analytics</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00ADD8"></div><div><div class="tech-item-name">Node.js</div><div class="tech-item-tier">APIs</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#6DB33F"></div><div><div class="tech-item-name">Spring Boot</div><div class="tech-item-tier">Microservices</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#512BD4"></div><div><div class="tech-item-name">ASP.NET Core</div><div class="tech-item-tier">Web APIs</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E44D26"></div><div><div class="tech-item-name">REST / SOAP</div><div class="tech-item-tier">Integration</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">Apache Kafka</div><div class="tech-item-tier">Messaging</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-frontend">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#61DAFB"></div><div><div class="tech-item-name">React</div><div class="tech-item-tier">Primary UI</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#42b883"></div><div><div class="tech-item-name">Vue.js</div><div class="tech-item-tier">Portals</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E44D26"></div><div><div class="tech-item-name">HTML5 / CSS3</div><div class="tech-item-tier">Foundation</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#F7DF1E"></div><div><div class="tech-item-name">TypeScript</div><div class="tech-item-tier">Typed JS</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#06B6D4"></div><div><div class="tech-item-name">Tailwind CSS</div><div class="tech-item-tier">Styling</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3178C6"></div><div><div class="tech-item-name">Angular</div><div class="tech-item-tier">Enterprise SPA</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-database">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#F80000"></div><div><div class="tech-item-name">Oracle DB</div><div class="tech-item-tier">Enterprise</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00758F"></div><div><div class="tech-item-name">MySQL</div><div class="tech-item-tier">Production</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#336791"></div><div><div class="tech-item-name">PostgreSQL</div><div class="tech-item-tier">Production</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#003B57"></div><div><div class="tech-item-name">MSSQL Server</div><div class="tech-item-tier">Enterprise</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#47A248"></div><div><div class="tech-item-name">MongoDB</div><div class="tech-item-tier">NoSQL</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-cloud">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#FF9900"></div><div><div class="tech-item-name">AWS</div><div class="tech-item-tier">Cloud</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#0078D4"></div><div><div class="tech-item-name">Azure</div><div class="tech-item-tier">Cloud</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#2496ED"></div><div><div class="tech-item-name">Docker</div><div class="tech-item-tier">Containers</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#326CE5"></div><div><div class="tech-item-name">Kubernetes</div><div class="tech-item-tier">Orchestration</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#E34A26"></div><div><div class="tech-item-name">Git / CI-CD</div><div class="tech-item-tier">DevOps</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#00C7B7"></div><div><div class="tech-item-name">Nginx</div><div class="tech-item-tier">Web Server</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">Terraform</div><div class="tech-item-tier">IaC</div></div></div>
+          </div>
+        </div>
+        <div class="tech-panel" id="panel-security">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><div class="tech-item-dot" style="background:#22c55e"></div><div><div class="tech-item-name">ISO 27001</div><div class="tech-item-tier">Framework</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#3b9eff"></div><div><div class="tech-item-name">PCI DSS</div><div class="tech-item-tier">Payment</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#fbbf24"></div><div><div class="tech-item-name">CBN Guidelines</div><div class="tech-item-tier">Regulatory</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#c084fc"></div><div><div class="tech-item-name">NDPR</div><div class="tech-item-tier">Data Privacy</div></div></div>
+            <div class="tech-item"><div class="tech-item-dot" style="background:#f87171"></div><div><div class="tech-item-name">OWASP</div><div class="tech-item-tier">Security</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASE STUDIES ══ -->
+<section id="case-studies">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Proven Impact</div>
+      <h2 class="section-title">Case Studies</h2>
+      <p class="section-subtitle">Real outcomes delivered to real institutions across Nigeria and Africa.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(239,68,68,0.12);color:#f87171;border:1px solid rgba(239,68,68,0.2)">Commercial Banking</div>
+          <div class="case-title">Cheque Truncation & Clearing Modernization</div>
+          <div class="case-client">Tier-1 Nigerian Commercial Bank</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">97%</div><div class="case-metric-label">Processing Accuracy</div></div>
+          <div class="case-metric"><div class="case-metric-num">60%</div><div class="case-metric-label">Clearing Time Reduced</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Deployed a full end-to-end MICR cheque truncation system integrated with NIBSS, replacing manual clearing with automated electronic processing.</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(99,102,241,0.12);color:#a78bfa;border:1px solid rgba(99,102,241,0.2)">Higher Education</div>
+          <div class="case-title">University-Wide Results & Records Platform</div>
+          <div class="case-client">Federal University, Nigeria</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">40K+</div><div class="case-metric-label">Students Managed</div></div>
+          <div class="case-metric"><div class="case-metric-num">100%</div><div class="case-metric-label">Paperless Records</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Implemented Results Manager and Smart Receipts across 12 faculties, replacing paper-based processes with an integrated digital academic management ecosystem.</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-top">
+          <div class="case-industry-tag" style="background:rgba(34,197,94,0.12);color:#4ade80;border:1px solid rgba(34,197,94,0.2)">Pension Administration</div>
+          <div class="case-title">Pension Payroll & Benefits Automation</div>
+          <div class="case-client">State Pension Commission</div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-num">₦2B+</div><div class="case-metric-label">Monthly Disbursements</div></div>
+          <div class="case-metric"><div class="case-metric-num">15K+</div><div class="case-metric-label">Pensioners Served</div></div>
+        </div>
+        <div class="case-card-foot">
+          <div class="case-desc">Deployed PayMaster to automate pension benefit computation, multi-bank payment routing, and monthly disbursement reporting — eliminating payment backlogs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section id="why-us">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 4rem">
+      <div class="section-label">Our Differentiators</div>
+      <h2 class="section-title">Why Institutions Trust ADIPATS</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-item-icon">🏗️</div>
+          <div>
+            <div class="why-item-title">Institutional-Grade Architecture</div>
+            <div class="why-item-desc">We design systems to handle millions of transactions daily with high availability, fault tolerance, and disaster recovery built in from day one.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">🌍</div>
+          <div>
+            <div class="why-item-title">Deep Local Domain Expertise</div>
+            <div class="why-item-desc">Two decades of experience with Nigerian regulatory frameworks — CBN, PENCOM, NUC, NDPR — means our solutions are compliance-ready from day one.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">🔧</div>
+          <div>
+            <div class="why-item-title">Bespoke, Not Off-the-Shelf</div>
+            <div class="why-item-desc">Every solution is engineered specifically for your institution's workflows, data models, and operational realities — not adapted from a generic template.</div>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon">📞</div>
+          <div>
+            <div class="why-item-title">Dedicated Support & SLAs</div>
+            <div class="why-item-desc">Named support teams, documented SLAs, and 24/7 emergency response for mission-critical systems — because downtime is not an option.</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-metric-list">
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#22c55e"></div>
+              <div class="why-metric-name">System Uptime</div>
+            </div>
+            <div class="why-metric-val">99.9%</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#3b9eff"></div>
+              <div class="why-metric-name">Client Retention</div>
+            </div>
+            <div class="why-metric-val">94%</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#fbbf24"></div>
+              <div class="why-metric-name">Avg. Deployment Time</div>
+            </div>
+            <div class="why-metric-val">8 wks</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#c084fc"></div>
+              <div class="why-metric-name">Support Response SLA</div>
+            </div>
+            <div class="why-metric-val">4 hrs</div>
+          </div>
+          <div class="why-metric">
+            <div class="why-metric-left">
+              <div class="why-metric-dot" style="background:#f87171"></div>
+              <div class="why-metric-name">Projects Delivered On Time</div>
+            </div>
+            <div class="why-metric-val">92%</div>
+          </div>
+        </div>
+        <div class="why-cert">
+          <div class="cert-badge">
+            <div class="cert-badge-title">🛡️ CBN Compliant</div>
+            <div class="cert-badge-sub">Banking Regulations</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">📋 ISO Aligned</div>
+            <div class="cert-badge-sub">Software Standards</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">🔒 NDPR Ready</div>
+            <div class="cert-badge-sub">Data Protection</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-title">⚡ 24/7 Support</div>
+            <div class="cert-badge-sub">Mission Critical</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS ══ -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="clients-intro reveal">
+      <div class="section-label">Our Clients</div>
+      <h2 class="section-title">Trusted by Nigeria's Best</h2>
+      <p class="section-subtitle">From Tier-1 commercial banks to federal universities and pension administrators — Africa's most trusted institutions rely on ADIPATS.</p>
+    </div>
+  </div>
+
+  <!-- Marquee Row 1: Banks -->
+  <div class="clients-marquee-wrap">
+    <div class="clients-marquee" id="marquee1">
+      <div class="client-logo-card"><div class="client-name">Stanbic IBTC</div></div>
+      <div class="client-logo-card"><div class="client-name">UBA</div></div>
+      <div class="client-logo-card"><div class="client-name">Union Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Keystone Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Nova Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Lotus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Optimus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Alpha Morgan Bank</div></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="client-logo-card"><div class="client-name">Stanbic IBTC</div></div>
+      <div class="client-logo-card"><div class="client-name">UBA</div></div>
+      <div class="client-logo-card"><div class="client-name">Union Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Keystone Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Nova Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Lotus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Optimus Bank</div></div>
+      <div class="client-logo-card"><div class="client-name">Alpha Morgan Bank</div></div>
+    </div>
+  </div>
+
+  <!-- Marquee Row 2: Universities & Others -->
+  <div class="clients-marquee-wrap">
+    <div class="clients-marquee clients-marquee-2">
+      <div class="client-logo-card"><div class="client-name">University of Lagos</div></div>
+      <div class="client-logo-card"><div class="client-name">Ahmadu Bello University</div></div>
+      <div class="client-logo-card"><div class="client-name">UNIPORT</div></div>
+      <div class="client-logo-card"><div class="client-name">Covenant University</div></div>
+      <div class="client-logo-card"><div class="client-name">Lagos PENCOM</div></div>
+      <div class="client-logo-card"><div class="client-name">State Pension Board</div></div>
+      <div class="client-logo-card"><div class="client-name">Federal MDAs</div></div>
+      <div class="client-logo-card"><div class="client-name">PHCN Successor DISCOs</div></div>
+      <!-- Duplicate -->
+      <div class="client-logo-card"><div class="client-name">University of Lagos</div></div>
+      <div class="client-logo-card"><div class="client-name">Ahmadu Bello University</div></div>
+      <div class="client-logo-card"><div class="client-name">UNIPORT</div></div>
+      <div class="client-logo-card"><div class="client-name">Covenant University</div></div>
+      <div class="client-logo-card"><div class="client-name">Lagos PENCOM</div></div>
+      <div class="client-logo-card"><div class="client-name">State Pension Board</div></div>
+      <div class="client-logo-card"><div class="client-name">Federal MDAs</div></div>
+      <div class="client-logo-card"><div class="client-name">PHCN Successor DISCOs</div></div>
+    </div>
+  </div>
+
+  <div class="section-inner">
+    <div class="clients-sectors reveal">
+      <div class="sector-count"><div class="sector-count-num">8+</div><div class="sector-count-label">Commercial Banks</div></div>
+      <div class="sector-count"><div class="sector-count-num">15+</div><div class="sector-count-label">Universities & Tertiary</div></div>
+      <div class="sector-count"><div class="sector-count-num">12+</div><div class="sector-count-label">Government Agencies</div></div>
+      <div class="sector-count"><div class="sector-count-num">10+</div><div class="sector-count-label">Pension & Insurance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECURITY ══ -->
+<section id="security">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 4rem">
+      <div class="section-label">Security & Trust</div>
+      <h2 class="section-title">Banking-Grade Security Architecture</h2>
+      <p class="section-subtitle">Every system we build is engineered with security-by-design principles, meeting the stringent requirements of Nigeria's financial sector.</p>
+    </div>
+    <div class="security-layout">
+      <div class="security-pillars reveal">
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🔐</div>
+          <div class="sec-pillar-title">End-to-End Encryption</div>
+          <div class="sec-pillar-desc">AES-256 encryption for data at rest and TLS 1.3 for all data in transit across our enterprise systems.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">👁️</div>
+          <div class="sec-pillar-title">Real-Time Monitoring</div>
+          <div class="sec-pillar-desc">24/7 system monitoring, anomaly detection, and automated alerts for all production deployments.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🛡️</div>
+          <div class="sec-pillar-title">Access Control</div>
+          <div class="sec-pillar-desc">Role-based access control (RBAC), multi-factor authentication, and privileged access management built into every platform.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">📋</div>
+          <div class="sec-pillar-title">Audit & Compliance</div>
+          <div class="sec-pillar-desc">Immutable audit trails, comprehensive logging, and automated compliance reporting for all regulated environments.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🔄</div>
+          <div class="sec-pillar-title">Disaster Recovery</div>
+          <div class="sec-pillar-desc">Multi-site backup architectures, automated failover, and documented RTO/RPO targets aligned to CBN guidelines.</div>
+        </div>
+        <div class="sec-pillar">
+          <div class="sec-pillar-icon">🧪</div>
+          <div class="sec-pillar-title">Penetration Testing</div>
+          <div class="sec-pillar-desc">Regular third-party security assessments, OWASP-aligned code reviews, and vulnerability remediation programs.</div>
+        </div>
+      </div>
+      <div class="security-compliance reveal">
+        <div class="compliance-title">Regulatory Alignment</div>
+        <div class="compliance-list">
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">CBN IT Standards & Risk Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">Nigeria Data Protection Regulation (NDPR)</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">PENCOM Retirement Savings Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">PCI DSS Payment Card Standards</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">ISO 27001 Information Security Framework</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">NIBSS Interbank Settlement Standards</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">NUC University Management Guidelines</div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-check">✓</div>
+            <div class="compliance-text">OWASP Top 10 Security Standards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Start Your Enterprise Journey</h2>
+      <p class="section-subtitle">Ready to modernize your institution's technology stack? Our team of enterprise architects are here to help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-locations">
+          <div class="contact-location">
+            <div class="contact-loc-header">
+              <div class="contact-loc-icon">🏢</div>
+              <div class="contact-loc-title">Head Office — Abuja</div>
+            </div>
+            <div class="contact-loc-address">
+              Plot 1234, Maitama District,<br>
+              Abuja, Federal Capital Territory,<br>
+              Nigeria
+            </div>
+            <div class="contact-loc-details">
+              <div class="contact-detail">📞 <a href="tel:+2348001234567">+234 800 123 4567</a></div>
+              <div class="contact-detail">✉️ <a href="mailto:info@adipats.com">info@adipats.com</a></div>
+            </div>
+          </div>
+          <div class="contact-location">
+            <div class="contact-loc-header">
+              <div class="contact-loc-icon">🏙️</div>
+              <div class="contact-loc-title">Lagos Office</div>
+            </div>
+            <div class="contact-loc-address">
+              14 Commercial Avenue,<br>
+              Sabo, Yaba,<br>
+              Lagos State, Nigeria
+            </div>
+            <div class="contact-loc-details">
+              <div class="contact-detail">📞 <a href="tel:+2348009876543">+234 800 987 6543</a></div>
+              <div class="contact-detail">✉️ <a href="mailto:lagos@adipats.com">lagos@adipats.com</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-pin">📍</div>
+          <div class="map-text">Nigeria · Abuja HQ &amp; Lagos Office</div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">Fill out the form and our enterprise team will respond within 24 hours.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Work Email</label>
+            <input class="form-input" type="email" placeholder="john@institution.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" placeholder="+234 800 000 0000"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Institution / Company</label>
+            <input class="form-input" type="text" placeholder="Your Organization"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Industry</label>
+            <select class="form-select">
+              <option value="">Select Industry</option>
+              <option>Commercial Banking</option>
+              <option>Higher Education</option>
+              <option>Pension Administration</option>
+              <option>Government / Parastatal</option>
+              <option>Healthcare</option>
+              <option>Manufacturing & Retail</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">How can we help?</label>
+            <textarea class="form-textarea" placeholder="Describe your project, system requirements, or challenges..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="nav-logo" style="margin-bottom:1rem">
+          <div class="logo-mark">AP</div>
+          ADIPATS Consulting
+        </div>
+        <div class="footer-brand-desc">Bespoke enterprise software development for Africa's most trusted institutions. Building mission-critical systems that power banks, universities, pension administrators, and government agencies.</div>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+          <a href="#" class="footer-social" aria-label="Facebook">f</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Solutions</div>
+        <ul class="footer-links">
+          <li><a href="#">Results Manager</a></li>
+          <li><a href="#">Smart Receipts</a></li>
+          <li><a href="#">POSTOCK</a></li>
+          <li><a href="#">PayMaster</a></li>
+          <li><a href="#">Cheque Truncation System</a></li>
+          <li><a href="#">Digipro Software</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Industries</div>
+        <ul class="footer-links">
+          <li><a href="#">Banking & Finance</a></li>
+          <li><a href="#">Universities</a></li>
+          <li><a href="#">Government</a></li>
+          <li><a href="#">Pension & Insurance</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Manufacturing</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">News & Insights</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 ADIPATS Consulting. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SOLUTION MODALS ══ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div id="modal-title-area"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-content"></div>
+  </div>
+</div>
+
+<!-- gsap.timeline()
+document.querySelectorAll('a[href^="#"]').forEach(a=>{ -->
+
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

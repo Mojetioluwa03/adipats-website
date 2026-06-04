@@ -1,0 +1,13 @@
+{
+  "name": "adipats-website",
+  "version": "0.1.0",
+  "description": "Static site for ADIPATS Consulting",
+  "scripts": {
+    "build": "esbuild index.html --bundle --minify --outfile=dist/index.html --loader:.html=text",
+    "serve": "npx http-server -c-1 . -p 8080"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.0",
+    "http-server": "^14.1.1"
+  }
+}
