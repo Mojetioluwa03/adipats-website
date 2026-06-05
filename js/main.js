@@ -58,6 +58,13 @@ function closeModalOnOverlay(e) {
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
+// Expose functions used by inline HTML handlers when this script is loaded as a module
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.closeModalOnOverlay = closeModalOnOverlay;
+window.switchTech = switchTech;
+window.handleSubmit = handleSubmit;
+
 // ══ TECH PANEL SWITCHER ══
 function switchTech(el, panel) {
   document.querySelectorAll('.tech-cat').forEach(c=>c.classList.remove('active'));
@@ -184,3 +191,5 @@ const observer = new IntersectionObserver(entries=>{
   });
 },{threshold:0.4});
 sections.forEach(s=>observer.observe(s));
+
+
