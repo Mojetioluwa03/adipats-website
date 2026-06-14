@@ -64,6 +64,63 @@ window.closeModal = closeModal;
 window.closeModalOnOverlay = closeModalOnOverlay;
 window.switchTech = switchTech;
 window.handleSubmit = handleSubmit;
+window.initMap = initMap;
+
+function initMap() {
+  const mapEl = document.getElementById('contact-map');
+  if (!mapEl || !window.google?.maps) return;
+
+  const locations = [
+    {title: 'Abuja HQ', position: {lat: 9.0765, lng: 7.3986}},
+    {title: 'Lagos Office', position: {lat: 6.5244, lng: 3.3792}}
+  ];
+
+  const map = new google.maps.Map(mapEl, {
+    center: locations[0].position,
+    zoom: 5,
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+    styles: [
+      {elementType: 'geometry', stylers: [{color: '#1f2937'}]},
+      {elementType: 'labels.text.fill', stylers: [{color: '#9ca3af'}]},
+      {elementType: 'labels.text.stroke', stylers: [{color: '#1f2937'}]},
+      {featureType: 'poi', elementType: 'labels.text.fill', stylers: [{color: '#9ca3af'}]},
+      {featureType: 'road', elementType: 'geometry', stylers: [{color: '#374151'}]},
+      {featureType: 'water', elementType: 'geometry', stylers: [{color: '#0f172a'}]},
+    ]
+  });
+
+  const bounds = new google.maps.LatLngBounds();
+  locations.forEach(loc => {
+    const marker = new google.maps.Marker({
+      position: loc.position,
+      map,
+      title: loc.title
+    });
+    const infoWindow = new google.maps.InfoWindow({
+      content: `<div style="font-family:var(--font-sans);font-size:0.95rem;color:#111">${loc.title}</div>`
+    });
+    marker.addListener('click', () => infoWindow.open(map, marker));
+    bounds.extend(loc.position);
+  });
+  map.fitBounds(bounds);
+}
+
+function loadGoogleMapsScript() {
+  if (window.google && window.google.maps) {
+    initMap();
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
+loadGoogleMapsScript();
 
 // ══ TECH PANEL SWITCHER ══
 function switchTech(el, panel) {
@@ -84,13 +141,38 @@ document.querySelectorAll('.mobile-menu a').forEach(a=>{
 // ══ FORM SUBMIT ══
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target;
-  btn.innerHTML = '✓ Message Sent — We\'ll be in touch!';
-  btn.style.background = 'linear-gradient(135deg,#16a34a,#15803d)';
-  setTimeout(()=>{
-    btn.innerHTML = 'Send Message <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    btn.style.background = '';
-  }, 3000);
+  const form = document.getElementById('contact-form');
+  const btn = form.querySelector('button[type="submit"]');
+  const status = document.getElementById('form-status');
+  const originalBtnHtml = btn.innerHTML;
+
+  btn.disabled = true;
+  status.textContent = 'Sending message...';
+
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: form.method,
+    body: new URLSearchParams(formData),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Form submission failed');
+    return response.json();
+  })
+  .then(() => {
+    form.reset();
+    status.textContent = 'Thank you! Your message has been sent.';
+    btn.innerHTML = '✓ Message Sent';
+  })
+  .catch(() => {
+    status.textContent = 'Something went wrong. Please try again or email mails@adipats.com.';
+    btn.innerHTML = originalBtnHtml;
+  })
+  .finally(() => {
+    btn.disabled = false;
+  });
 }
 
 // ══ PARTICLES ══
